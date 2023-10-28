@@ -19,7 +19,6 @@ Route::get('checkusername', [CheckUsernameController::class, 'Checkusername'])->
 Route::get('checkemail', [CheckUsernameController::class, 'checkemail'])->name('checkemail');
 Route::get('checkphone', [CheckUsernameController::class, 'checkphone'])->name('checkphone');
 Route::get('/pass', [CheckUsernameController::class, 'pass'])->name('pass');
-Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
