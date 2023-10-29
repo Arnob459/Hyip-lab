@@ -18,21 +18,21 @@
                                             <div class="form-group">
                                                 <label for="first-name-vertical"> Old password</label>
                                                 <input type="password" id="first-name-vertical" class="form-control"
-                                                name="oldpassword" required>
+                                                name="old_password" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="email-id-vertical">New Password</label>
                                                 <input type="password" id="email-id-vertical" class="form-control"
-                                                name="newpassword" required>
+                                                name="password" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="contact-info-vertical">Confirm Password</label>
                                                 <input type="password" id="contact-info-vertical" class="form-control"
-                                                name="confirmpassword" required>
+                                                name="password_confirmation" required>
                                             </div>
                                         </div>
 

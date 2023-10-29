@@ -45,12 +45,17 @@ Route::name('admin.')->group(function() {
           Route::post('/referral/levels', [ReferralController::class, 'levelStore'])->name('levels.store');
           Route::post('/deposit/commission', [ReferralController::class, 'commissionUpdate'])->name('commission.update');
 
+        //   Route::get('referrals', 'ReferralController@index')->name('referrals');
+        //   Route::post('referrals', 'ReferralController@create')->name('referrals');
+        //   Route::put('referral-commission', 'ReferralController@refCom')->name('referral.com');
+
           //plan
           Route::get('/plan', [PlanController::class, 'Index'])->name('plan');
           Route::get('/plan/create', [PlanController::class, 'planCreate'])->name('plan.create');
           Route::post('/plan/create', [PlanController::class, 'planStore'])->name('plan.store');
           Route::get('plan/{id}/edit', [PlanController::class, 'planEdit'])->name('plan.edit');
           Route::post('plan/{id}/edit', [PlanController::class, 'planUpdate'])->name('plan.update');
+
 
           //Rewards
           Route::get('/reward', [RewardsController::class, 'Index'])->name('rewards');

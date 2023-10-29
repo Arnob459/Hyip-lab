@@ -43,7 +43,7 @@
 
                                     <div class="user-img d-flex align-items-center">
                                         <div class="avatar avatar-md">
-                                            <img src="{{ asset('assets/admin/images/avatar/'.auth()->guard('admin')->user()->image) }}">
+                                            <img src="{{ asset('assets/admin/images/profile/'.auth()->guard('admin')->user()->image) }}">
                                         </div>
                                     </div>
                                 </div>

@@ -13,7 +13,7 @@
                                     <div class="row">
                                         <div class="col-12 ">
                                             <div class="avatar avatar-xl me-3 mb-3 ">
-                                            <img src="{{ asset('assets/admin/images/avatar/'.$admin->avatar) }}" alt="" srcset="">
+                                            <img src="{{ asset('assets/admin/images/profile/'.$admin->image) }}" alt="" srcset="">
                                             </div>
 
                                             <h3 class="card-title text-nowrap mb-1"> {{ $admin->username }} </h3>
@@ -47,17 +47,10 @@
                                                 name="username" value="{{ $admin->username }}" required>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="contact-info-vertical">Mobile</label>
-                                                <input type="number" id="contact-info-vertical" class="form-control"
-                                                name="phone" value="{{ $admin->phone }}" required>
-                                            </div>
-                                        </div>
 
                                         <div class="mb-3">
                                             <label for="formFileSm" class="form-label">Avatar </label>
-                                            <input class="form-control form-control-sm" name="avatar" id="formFileSm" type="file">
+                                            <input class="form-control form-control-sm" name="image" id="formFileSm" type="file">
                                         </div>
 
                                         <div class="col-12">
