@@ -21,5 +21,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         view()->share(['gnl' => \App\Models\Setting::first()]);
+        view()->share(['gnl_extra' => \App\Models\SettingExtra::first(['contact_phone'])]);
+        view()->share(['socials' => \App\Models\Social::all()]);
+        view()->share(['lang' => \App\Models\Language::all()]);
     }
 }

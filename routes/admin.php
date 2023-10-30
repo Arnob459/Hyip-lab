@@ -35,19 +35,10 @@ Route::name('admin.')->group(function() {
           Route::get('/change/password',[AdminController::class,'passwordChange'])->name('password');
           Route::post('password',[AdminController::class,'passwordUpdate'])->name('password.update');
 
-        //   Route::get('profile', 'AdminController@profile')->name('profile');
-        //   Route::post('profile', 'AdminController@profileUpdate')->name('profile.update');
-        //   Route::post('password', 'AdminController@passwordUpdate')->name('password.update');
-        //   Route::get('change/password', 'AdminController@passwordChange')->name('change.password');
-
           //Referral
           Route::get('/referrals', [ReferralController::class, 'Index'])->name('referral');
           Route::post('/referral/levels', [ReferralController::class, 'levelStore'])->name('levels.store');
           Route::post('/deposit/commission', [ReferralController::class, 'commissionUpdate'])->name('commission.update');
-
-        //   Route::get('referrals', 'ReferralController@index')->name('referrals');
-        //   Route::post('referrals', 'ReferralController@create')->name('referrals');
-        //   Route::put('referral-commission', 'ReferralController@refCom')->name('referral.com');
 
           //plan
           Route::get('/plan', [PlanController::class, 'Index'])->name('plan');
