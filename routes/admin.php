@@ -72,9 +72,6 @@ Route::name('admin.')->group(function() {
           Route::post('addbalance/{id}', [UserController::class, 'addBalance'])->name('user.addbalance');
           Route::post('subbalance/{id}', [UserController::class, 'subBalance'])->name('user.subbalance');
 
-
-
-
           //Subscribers
           Route::get('/subscriber', [SubscriberController::class, 'Index'])->name('subscribers');
           Route::get('/subscriber/mail', [SubscriberController::class, 'Mail'])->name('subscribers.mail');
@@ -140,8 +137,8 @@ Route::name('admin.')->group(function() {
 
 
           //About
-          Route::get('home/about', [AboutController::class, 'About'])->name('about');
-          Route::post('home/about', [AboutController::class, 'aboutUpdate'])->name('about.update');
+          Route::get('home/about', [SettingExtraController::class, 'about'])->name('about');
+          Route::post('home/about', [SettingExtraController::class, 'aboutUpdate'])->name('about.update');
 
           //Counter
           Route::get('home/counter', [CounterController::class, 'Counter'])->name('counter');
@@ -212,12 +209,12 @@ Route::name('admin.')->group(function() {
           Route::post('home/title-subtitle', [TitleSubtitleController::class, 'titleSubtitleUpdate'])->name('titleSubtitle.update');
 
           //privacy
-          Route::get('home/privacy', [PrivacyController::class, 'Privacy'])->name('privacy');
-          Route::post('home/privacy', [PrivacyController::class, 'privacyUpdate'])->name('privacy.update');
+          Route::get('home/privacy', [SettingExtraController::class, 'Privacy'])->name('privacy');
+          Route::post('home/privacy', [SettingExtraController::class, 'privacyUpdate'])->name('privacy.update');
 
           //Terms
-          Route::get('home/terms', [TermsController::class, 'Terms'])->name('terms');
-          Route::post('home/terms', [TermsController::class, 'termsUpdate'])->name('terms.update');
+          Route::get('home/terms', [SettingExtraController::class, 'Terms'])->name('terms');
+          Route::post('home/terms', [SettingExtraController::class, 'termsUpdate'])->name('terms.update');
 
           //End Home
 
