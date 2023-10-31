@@ -60,15 +60,19 @@ Route::name('admin.')->group(function() {
 
 
           //Manage User
-          Route::get('/allusers', [UserManageController::class, 'Index'])->name('allusers');
-          Route::get('/activeusers', [UserManageController::class, 'activeUsers'])->name('activeusers');
-          Route::get('/pendingusers', [UserManageController::class, 'pendingUsers'])->name('pendingusers');
-          Route::get('/blockedusers', [UserManageController::class, 'blockedUsers'])->name('blockedusers');
-          Route::get('/emailunverified', [UserManageController::class, 'emailUnverifiedUsers'])->name('emailunverified');
-          Route::get('/smsunverified', [UserManageController::class, 'smsUnverifiedUsers'])->name('smsunverified');
+          Route::get('/allusers', [UserController::class, 'Index'])->name('allusers');
+          Route::get('/activeusers', [UserController::class, 'activeUsers'])->name('activeusers');
+          Route::get('/pendingusers', [UserController::class, 'pendingUsers'])->name('pendingusers');
+          Route::get('/blockedusers', [UserController::class, 'blockedUsers'])->name('blockedusers');
+          Route::get('/emailunverified', [UserController::class, 'emailUnverifiedUsers'])->name('emailunverified');
+          Route::get('/smsunverified', [UserController::class, 'smsUnverifiedUsers'])->name('smsunverified');
 
-          Route::get('users/{id}', [UserManageController::class, 'userEdit'])->name('user.edit');
-          Route::post('users/{id}', [UserManageController::class, 'userUpdate'])->name('user.update');
+          Route::get('users/{id}', [UserController::class, 'userEdit'])->name('user.edit');
+          Route::post('users/{id}', [UserController::class, 'userUpdate'])->name('user.update');
+          Route::post('addbalance/{id}', [UserController::class, 'addBalance'])->name('user.addbalance');
+          Route::post('subbalance/{id}', [UserController::class, 'subBalance'])->name('user.subbalance');
+
+
 
 
           //Subscribers

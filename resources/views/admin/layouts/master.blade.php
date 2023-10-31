@@ -70,7 +70,7 @@
                 </div>
             </nav>
         </header>
-        {{-- @if (session('error'))
+        @if (session('error'))
         <div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i> {{session('error')}}</div>
         @endif
 
@@ -86,12 +86,12 @@
         @endif
 
 
-        @if (session('success'))
+        {{-- @if (session('success'))
             <div class="alert alert-success"><i class="bi bi-check-circle"></i> {{session('success')}}</div>
         @endif --}}
-        @if(session()->has('toastr'))
+        {{-- @if(session()->has('toastr'))
             {!! session('toastr') !!}
-        @endif
+        @endif --}}
 
         <div class="page-heading">
             <div class="page-title mb-4">
