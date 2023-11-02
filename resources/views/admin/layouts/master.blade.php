@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
 
+    <script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script>
+
+
     <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">

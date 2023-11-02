@@ -112,11 +112,11 @@
                         <span>Deposit Methods</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="">Autometic Methods</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.gateway.index') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.gateway.index') }}">Autometic Methods</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Manual Methods</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.manual.index') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.manual.index') }}">Manual Methods</a>
                         </li>
                     </ul>
                 </li>

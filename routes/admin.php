@@ -77,6 +77,22 @@ Route::name('admin.')->group(function() {
           Route::get('/subscriber/mail', [SubscriberController::class, 'Mail'])->name('subscribers.mail');
           Route::post('/subscriber/mail', [SubscriberController::class, 'sendEmail'])->name('subscribers.mail.send');
 
+        // Deposit Gateway
+        Route::get('deposit/gateway', [GatewayController::class, 'index'])->name('deposit.gateway.index');
+        Route::get('deposit/gateway/edit/{code}', [GatewayController::class, 'edit'])->name('deposit.gateway.edit');
+        Route::post('deposit/gateway/update/{code}', [GatewayController::class, 'update'])->name('deposit.gateway.update');
+        Route::post('deposit/gateway/remove/{code}', [GatewayController::class, 'remove'])->name('deposit.gateway.remove');
+        Route::post('deposit/gateway/activate', [GatewayController::class, 'activate'])->name('deposit.gateway.activate');
+        Route::post('deposit/gateway/deactivate', [GatewayController::class, 'deactivate'])->name('deposit.gateway.deactivate');
+
+        // Manual Methods
+        Route::get('deposit/gateway/manual', [ManualGatewayController::class, 'index'])->name('deposit.manual.index');
+        Route::get('deposit/gateway/manual/new', [ManualGatewayController::class, 'create'])->name('deposit.manual.create');
+        Route::post('deposit/gateway/manual/new', [ManualGatewayController::class, 'store'])->name('deposit.manual.store');
+        Route::get('deposit/gateway/manual/edit/{id}', [ManualGatewayController::class, 'edit'])->name('deposit.manual.edit');
+        Route::post('deposit/gateway/manual/update/{id}', [ManualGatewayController::class, 'update'])->name('deposit.manual.update');
+        Route::post('deposit/gateway/manual/activate', [ManualGatewayController::class, 'activate'])->name('deposit.manual.activate');
+        Route::post('deposit/gateway/manual/deactivate', [ManualGatewayController::class, 'deactivate'])->name('deposit.manual.deactivate');
           //Basic Settings
 
           //Basic
