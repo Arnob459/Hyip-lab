@@ -128,17 +128,17 @@
                         <span>Deposit History</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="">All Deposits</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.list') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.list') }}">All Deposits</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Approved Deposits</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.approved') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.approved') }}">Approved Deposits</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Pending Deposits</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.pending') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.pending') }}">Pending Deposits</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Rejected Deposits</a>
+                        <li class="submenu-item {{ Route::is('admin.deposit.rejected') ? 'active' : '' }}">
+                            <a href="{{ route('admin.deposit.rejected') }}">Rejected Deposits</a>
                         </li>
                     </ul>
                 </li>
@@ -150,20 +150,20 @@
                         <span>Withdrawals</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="">Withdraw Methods</a>
+                        <li class="submenu-item {{ Route::is('admin.withdraw.method.methods') ? 'active' : '' }}">
+                            <a href="{{ route('admin.withdraw.method.methods') }}">Withdraw Methods</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Pending Withdrawals</a>
+                        <li class="submenu-item {{ Route::is('admin.withdraw.pending') ? 'active' : '' }}">
+                            <a href="{{ route('admin.withdraw.pending') }}">Pending Withdrawals</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Approved Withdrawals</a>
+                        <li class="submenu-item {{ Route::is('admin.withdraw.approved') ? 'active' : '' }}">
+                            <a href="{{ route('admin.withdraw.approved') }}">Approved Withdrawals</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Rejected Withdrawals</a>
+                        <li class="submenu-item {{ Route::is('admin.withdraw.rejected') ? 'active' : '' }}">
+                            <a href="{{ route('admin.withdraw.rejected') }}">Rejected Withdrawals</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">All Withdrawals</a>
+                        <li class="submenu-item {{ Route::is('admin.withdraw.log') ? 'active' : '' }}">
+                            <a href="{{ route('admin.withdraw.log') }}">All Withdrawals</a>
                         </li>
                     </ul>
                 </li>
@@ -175,17 +175,17 @@
                         <span>Transections</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="">Transaction Logs</a>
+                        <li class="submenu-item {{ Route::is('admin.report.transaction') ? 'active' : '' }}">
+                            <a href="{{ route('admin.report.transaction') }}">Transaction Logs</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Investment Log </a>
+                        <li class="submenu-item {{ Route::is('admin.report.investment') ? 'active' : '' }}">
+                            <a href="{{ route('admin.report.investment') }}">Investment Log </a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Investment History</a>
+                        <li class="submenu-item {{ Route::is('admin.report.interest') ? 'active' : '' }}">
+                            <a href="{{ route('admin.report.interest') }}">Interest History</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="">Referral Commissions</a>
+                        <li class="submenu-item {{ Route::is('admin.report.referral') ? 'active' : '' }}">
+                            <a href="{{ route('admin.report.referral') }}">Referral Commissions</a>
                         </li>
                     </ul>
                 </li>

@@ -24,7 +24,7 @@
                                         <div class="input-file input-file-image">
                                             <div class="form-group ">
                                                 <img  class="img-fluid" id="image-preview"
-                                                src="{{ asset('assets/images/gateway/'.$method->image) }} alt="preview">
+                                                src="{{ asset('assets/images/gateway/'.$method->image) }}" alt="preview">
                                                 {{-- <img src="{{ asset('assets/images/gateway/'.$gateway->image) }}" alt="Image Preview" id="image-preview" style="height:200px" > --}}
                                             </div>
                                             <div class="col-lg-12 ">
@@ -243,6 +243,7 @@
     @if(old('currency'))
     $('input[name=currency]').trigger('input');
     @endif
+
 </script>
 @endpush
 @include('partials.validation_js')

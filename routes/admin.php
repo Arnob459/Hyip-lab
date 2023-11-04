@@ -77,6 +77,15 @@ Route::name('admin.')->group(function() {
           Route::get('/subscriber/mail', [SubscriberController::class, 'Mail'])->name('subscribers.mail');
           Route::post('/subscriber/mail', [SubscriberController::class, 'sendEmail'])->name('subscribers.mail.send');
 
+        // DEPOSIT SYSTEM
+        Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit.list');
+        Route::get('deposit/pending', [DepositController::class, 'pending'])->name('deposit.pending');
+        Route::get('deposit/rejected', [DepositController::class, 'rejected'])->name('deposit.rejected');
+        Route::get('deposit/approved', [DepositController::class, 'approved'])->name('deposit.approved');
+        Route::post('deposit/reject', [DepositController::class, 'reject'])->name('deposit.reject');
+        Route::post('deposit/approve', [DepositController::class, 'approve'])->name('deposit.approve');
+        Route::get('deposit/{scope}/search', [DepositController::class, 'search'])->name('deposit.search');
+
         // Deposit Gateway
         Route::get('deposit/gateway', [GatewayController::class, 'index'])->name('deposit.gateway.index');
         Route::get('deposit/gateway/edit/{code}', [GatewayController::class, 'edit'])->name('deposit.gateway.edit');
@@ -93,7 +102,32 @@ Route::name('admin.')->group(function() {
         Route::post('deposit/gateway/manual/update/{id}', [ManualGatewayController::class, 'update'])->name('deposit.manual.update');
         Route::post('deposit/gateway/manual/activate', [ManualGatewayController::class, 'activate'])->name('deposit.manual.activate');
         Route::post('deposit/gateway/manual/deactivate', [ManualGatewayController::class, 'deactivate'])->name('deposit.manual.deactivate');
-          //Basic Settings
+
+        // Withdraw Method
+        Route::get('withdraw/method/', [WithdrawMethodController::class, 'methods'] )->name('withdraw.method.methods');
+        Route::get('withdraw/method/new', [WithdrawMethodController::class, 'create'] )->name('withdraw.method.create');
+        Route::post('withdraw/method/store', [WithdrawMethodController::class, 'store'] )->name('withdraw.method.store');
+        Route::get('withdraw/method/edit/{id}', [WithdrawMethodController::class, 'edit'] )->name('withdraw.method.edit');
+        Route::post('withdraw/method/edit/{id}', [WithdrawMethodController::class, 'update'] )->name('withdraw.method.update');
+        Route::post('withdraw/method/activate', [WithdrawMethodController::class, 'activate'] )->name('withdraw.method.activate');
+        Route::post('withdraw/method/deactivate', [WithdrawMethodController::class, 'deactivate'] )->name('withdraw.method.deactivate');
+
+        // WITHDRAW SYSTEM
+        Route::get('withdraw/pending', [WithdrawalController::class, 'pending'] )->name('withdraw.pending');
+        Route::get('withdraw/approved', [WithdrawalController::class, 'approved'] )->name('withdraw.approved');
+        Route::get('withdraw/rejected', [WithdrawalController::class, 'rejected'] )->name('withdraw.rejected');
+        Route::get('withdraw/log', [WithdrawalController::class, 'log'] )->name('withdraw.log');
+        Route::get('withdraw/{scope}/search', [WithdrawalController::class, 'search'] )->name('withdraw.search');
+        Route::post('withdraw/approve', [WithdrawalController::class, 'approve'] )->name('withdraw.approve');
+        Route::post('withdraw/reject', [WithdrawalController::class, 'reject'] )->name('withdraw.reject');
+
+        // Report
+        Route::get('report/transaction', [ReportController::class, 'transaction'])->name('report.transaction');
+        Route::get('report/referral/commission', [ReportController::class, 'referral'])->name('report.referral');
+        Route::get('report/interest', [ReportController::class, 'interest'])->name('report.interest');
+        Route::get('report/investment', [ReportController::class, 'investment'])->name('report.investment');
+
+        //Basic Settings
 
           //Basic
           Route::get('settings/basic', [BasicSettingsController::class, 'basicSettings'])->name('settings');
