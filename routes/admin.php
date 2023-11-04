@@ -72,10 +72,10 @@ Route::name('admin.')->group(function() {
           Route::post('addbalance/{id}', [UserController::class, 'addBalance'])->name('user.addbalance');
           Route::post('subbalance/{id}', [UserController::class, 'subBalance'])->name('user.subbalance');
 
-          //Subscribers
-          Route::get('/subscriber', [SubscriberController::class, 'Index'])->name('subscribers');
-          Route::get('/subscriber/mail', [SubscriberController::class, 'Mail'])->name('subscribers.mail');
-          Route::post('/subscriber/mail', [SubscriberController::class, 'sendEmail'])->name('subscribers.mail.send');
+        //Subscribers
+        Route::get('/subscriber', [SubscriberController::class, 'index'])->name('subscriber');
+        Route::get('/subscriber/mail', [SubscriberController::class, 'mail'])->name('subscriber.mail');
+        Route::post('/subscriber/mail', [SubscriberController::class, 'sendMail'])->name('subscriber.mail.send');
 
         // DEPOSIT SYSTEM
         Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit.list');
@@ -130,33 +130,35 @@ Route::name('admin.')->group(function() {
         //Basic Settings
 
           //Basic
-          Route::get('settings/basic', [BasicSettingsController::class, 'basicSettings'])->name('settings');
-          Route::post('settings/basic', [BasicSettingsController::class, 'basicUpdate'])->name('basic.update');
+          Route::get('settings/basic', [BasicSettingController::class, 'basic'])->name('settings');
+          Route::post('settings/basic', [BasicSettingController::class, 'basicUpdate'])->name('settings.basic');
 
           //logo
-          Route::get('settings/logo-favicon', [BasicSettingsController::class, 'logo'])->name('logo');
-          Route::post('settings/logo-favicon', [BasicSettingsController::class, 'logoUpdate'])->name('logo.update');
+          Route::get('settings/logo-favicon', [BasicSettingController::class, 'logo_favicon'])->name('logo');
+          Route::post('settings/logo-favicon', [BasicSettingController::class, 'logo_favicon_update'])->name('settings.logo');
 
+
+        Route::get('settings/home-version', [BasicSettingController::class, 'homeversion'])->name('settings.home.version');
+        Route::post('settings/home-version/post', [BasicSettingController::class, 'updatehomeversion'])->name('settings.home.version.update');
 
           //Contact
-          Route::get('settings/contact', [BasicSettingsController::class, 'Contact'])->name('contact');
-          Route::post('settings/contact', [BasicSettingsController::class, 'contactUpdate'])->name('contact.update');
+          Route::get('settings/contact', [BasicSettingController::class, 'contact'])->name('contact');
+          Route::post('settings/contact', [BasicSettingController::class, 'contactUpdate'])->name('settings.contact');
 
           //Breadcrumb
-          Route::get('settings/breadcrumb', [BasicSettingsController::class, 'Breadcrumb'])->name('breadcrumb');
-          Route::post('settings/breadcrumb', [BasicSettingsController::class, 'breadcrumbUpdate'])->name('breadcrumb.update');
+          Route::get('settings/breadcrumb', [BasicSettingController::class, 'breadcrumb'])->name('breadcrumb');
+          Route::post('settings/breadcrumb', [BasicSettingController::class, 'breadcrumbUpdate'])->name('settings.breadcrumb');
 
-          //Social
-          Route::get('settings/social/create', [BasicSettingsController::class, 'socialCreate'])->name('social.create');
-          Route::post('settings/social/create', [BasicSettingsController::class, 'socialStore'])->name('social.store');
-          Route::get('settings/social/edit/{id}', [BasicSettingsController::class, 'socialEdit'])->name('social.edit');
-          Route::post('settings/social/edit/{id}', [BasicSettingsController::class, 'socialUpdate'])->name('social.update');
-          Route::delete('/social/destroy/{id}', [BasicSettingsController::class, 'destroy'])->name('social.destroy');
-
+        //   //Social
+          Route::get('settings/social/create', [SocialController::class, 'index'])->name('social.create');
+          Route::post('settings/social/create', [SocialController::class, 'store'])->name('settings.social.store');
+          Route::get('settings/social/edit/{id}', [SocialController::class, 'edit'])->name('settings.social.edit');
+          Route::post('settings/social/edit/{id}', [SocialController::class, 'update'])->name('settings.social.update');
+          Route::delete('/social/destroy/{id}', [SocialController::class, 'destroy'])->name('settings.social.destroy');
 
           //Footer
-          Route::get('settings/footer', [BasicSettingsController::class, 'Footer'])->name('footer');
-          Route::post('settings/footer', [BasicSettingsController::class, 'footerUpdate'])->name('footer.update');
+          Route::get('settings/footer', [BasicSettingController::class, 'footer'])->name('footer');
+          Route::post('settings/footer', [BasicSettingController::class, 'footerUpdate'])->name('settings.footer');
 
           //End Basic Settings
 

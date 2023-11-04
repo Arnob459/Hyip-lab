@@ -97,10 +97,10 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item {{ Route::is('admin.subscribers') ? 'active' : '' }}">
-                            <a href="{{ route('admin.subscribers') }}">Subscribers</a>
+                            <a href="{{ route('admin.subscriber') }}">Subscribers</a>
                         </li>
                         <li class="submenu-item {{ Route::is('admin.subscribers.mail') ? 'active' : '' }}">
-                            <a href="{{ route('admin.subscribers.mail') }}">Mail to Subscribers</a>
+                            <a href="{{ route('admin.subscriber.mail') }}">Mail to Subscribers</a>
                         </li>
                     </ul>
                 </li>
@@ -202,6 +202,9 @@
                         </li>
                         <li class="submenu-item {{ Route::is('admin.logo') ? 'active' : '' }}">
                             <a href="{{ route('admin.logo') }}">Logo & favicon</a>
+                        </li>
+                        <li class="submenu-item {{ Route::is('admin.settings.home.version') ? 'active' : '' }}">
+                            <a href="{{ route('admin.settings.home.version') }}">Home Version</a>
                         </li>
                         <li class="submenu-item {{ Route::is('admin.contact') ? 'active' : '' }}">
                             <a href="{{ route('admin.contact') }}">Contact</a>
