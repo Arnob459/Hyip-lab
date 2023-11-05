@@ -1,16 +1,14 @@
 
 @extends('users.master')
 
-@section('user')
-
-
+@section('content')
 
                     <div class="dashboard-hero-content text-white">
-                        <h3 class="title">Dashboard</h3>
+                        <h3 class="title">{{ $page_title }}</h3>
                         <ul class="breadcrumb">
                             <li class="nav-item"><a class="nav-link " href="">Home</a> </li>
                             <li>
-                                Dashboard
+                                {{ $page_title }}
                             </li>
                         </ul>
                     </div>
@@ -22,7 +20,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Deposit wallet Balance </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money(auth()->user()->balance)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-wallet"></i>
@@ -35,7 +33,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Interest Wallet Balance </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money(auth()->user()->interest_balance)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-wallet"></i>
@@ -48,7 +46,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Deposit</span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($total_deposit)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-coin"></i>
@@ -62,7 +60,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Withdrawal</span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($total_withdrawal)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-atm"></i>
@@ -76,7 +74,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Investment </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($total_invest)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-coin"></i>
@@ -90,7 +88,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Interest return </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($total_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-interest"></i>
@@ -104,7 +102,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Today Interest return </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($today_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-interest"></i>
@@ -118,7 +116,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Yesterday Interest return</span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($yesterday_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-interest"></i>
@@ -132,7 +130,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Last 7 days Interest return </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($last_7_day_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-interest"></i>
@@ -146,7 +144,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Last 30 days Interest return </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($this_month_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-interest"></i>
@@ -160,7 +158,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Referral Commission </span>
-                                        <h5 class="amount">0 USD</h5>
+                                        <h5 class="amount">{{formatter_money($total_refferal_com)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-exchange"></i>
@@ -174,7 +172,7 @@
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
                                         <span class="title">Total Referral</span>
-                                        <h5 class="amount">0 </h5>
+                                        <h5 class="amount">{{ $total_refferal_user }}</h5>
                                     </div>
                                     <div class="col-md-3">
                                         <i class="fa-2x flaticon-team"></i>
@@ -186,42 +184,7 @@
                     </div>
 
                 </div>
-                <div class="container-fluid sticky-bottom">
-                    <div class="footer-bottom">
-                        <div class="footer-bottom-area">
-                            <div >
-                                <p> Copyright © 2020. All rights reserved</p>
-                            </div>
-                            <ul class="social-icons">
-                                <li>
-                                    <a href="#0">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0" class="active">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        <i class="fab fa-pinterest-p"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=======SideHeader-Section Ends Here=======-->
 
 
-    </div>
 
 @endsection
