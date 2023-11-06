@@ -30,7 +30,7 @@
                     </div>
                       @endif
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form class="account-form" method="POST" action="{{ route('register') }}">
                       @csrf
                       <div class="form-group input-group">
 
@@ -82,7 +82,7 @@
                       </div>
 
                     <div class="form-group text-center">
-                        <button type="submit">Sign Up</button>
+                        <button class="mt-2 mb-2 custom-button" type="submit">Sign Up</button>
 
                     </div>
                 </form>

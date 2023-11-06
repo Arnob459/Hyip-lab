@@ -87,25 +87,25 @@
                         <li class="nav-item"><a class="nav-link " href="deposit.html"><i class="fas fa-coins"></i>Deposit Now</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link { Route::is('user.deposit.history') ? 'active' : '' }}" href="{{route('user.deposit.history')}}"><i class="flaticon-exchange"></i>Deposit History</a>
+                        <li class="nav-item"><a class="nav-link {{  Route::is('user.deposit.history') ? 'active' : ''  }}" href="{{route('user.deposit.history')}}"><i class="flaticon-exchange"></i>Deposit History</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link { Route::is('user.withdraw') ? 'active' : '' }}"href="{{route('user.withdraw')}}"><i class="flaticon-atm"></i>Withdraw</a>
+                        <li class="nav-item"><a class="nav-link {{  Route::is('user.withdraw') ? 'active' : ''  }}"href="{{route('user.withdraw')}}"><i class="flaticon-atm"></i>Withdraw</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link { Route::is('user.withdraw.history') ? 'active' : '' }}" href="{{route('user.withdraw.history')}}"><i class="flaticon-exchange"></i>Withdraw History</a>
+                        <li class="nav-item"><a class="nav-link {{  Route::is('user.withdraw.history') ? 'active' : ''  }}" href="{{route('user.withdraw.history')}}"><i class="flaticon-exchange"></i>Withdraw History</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link { Route::is('user.transactions') ? 'active' : '' }}" href="{{route('user.transactions')}}"><i class="flaticon-deal"></i>Transactions</a>
+                        <li class="nav-item"><a class="nav-link {{  Route::is('user.transactions') ? 'active' : ''  }}" href="{{route('user.transactions')}}"><i class="flaticon-deal"></i>Transactions</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link {{ Route::is('user.referral.statistic') ? 'active' : '' }}" href="{{ route('user.referral.statistic') }}"><i class="fas fa-users"></i>Referral Statistic</a>
+                        <li class="nav-item"><a class="nav-link {{ Route::is('user.ref') ? 'active' : '' }}" href="{{ route('user.ref') }}"><i class="fas fa-users"></i>Referral Statistic</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link " href="promotional-metarials.html"><i class="fas fa-coins"></i>Referral Commissions</a>
+                        <li class="nav-item"><a class="nav-link {{ Route::is('user.ref_com') ? 'active' : '' }}" href="{{ route('user.ref_com') }}"><i class="fas fa-coins"></i>Referral Commissions</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link " href="promotional-metarials.html"><i class="fas fa-user"></i>Profile </a>
+                        <li class="nav-item"><a class="nav-link {{ Route::is('user.profile') ? 'active' : '' }}" href="{{ route('user.profile') }}"><i class="fas fa-user"></i>Profile </a>
                         </li>
 
                         <li class="nav-item"><a class="nav-link " href="{{ route('user.logout') }}"><i class="flaticon-right-arrow"></i>Logout</a>
@@ -163,8 +163,8 @@
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                                aria-haspopup="true" aria-expanded="false">Referral</a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href=" /referral-statistic">Referral statistic</a></li>
-                                                <li><a class="dropdown-item" href=" /referral-commission">Referral commissions</a>
+                                                <li><a class="dropdown-item" href=" {{route('user.ref')}}">Referral statistic</a></li>
+                                                <li><a class="dropdown-item" href=" {{route('user.ref_com')}}">Referral commissions</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -175,8 +175,8 @@
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                                aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                                             <ul class="dropdown-menu last">
-                                                <li><a class="dropdown-item" href=" /profile">Profile</a></li>
-                                                <li><a class="dropdown-item" href=" /change-password">Change Password</a></li>
+                                                <li><a class="dropdown-item" href="{{route('user.profile')}}">Profile</a></li>
+                                                <li><a class="dropdown-item" href="{{route('user.change.password')}}">Change Password</a></li>
                                                 <li><a class="dropdown-item" href=" /support">Support</a></li>
                                                 <li><a class="dropdown-item" href=" /g2fa">2Fa Security</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('user.logout') }}">Logout</a></li>

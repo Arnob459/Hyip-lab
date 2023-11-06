@@ -52,11 +52,12 @@
                 @endforeach
                 </tbody>
         </table>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-xl-12 justify-content-center text-center">
-            {{$logs->links()}}
-        </div>
+
+            <ul class="pagination-overfollow">
+
+                <p>{{ $logs->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+
+            </ul>
     </div>
 </div>
 

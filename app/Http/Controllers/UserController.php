@@ -33,8 +33,8 @@ class UserController extends Controller
     public function profileUpdate(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|max:160',
-            'last_name' => 'required|max:160',
+            'name' => 'required|max:160',
+            // 'last_name' => 'required|max:160',
             'address' => 'nullable|max:160',
             'city' => 'nullable|max:160',
             'state' => 'nullable|max:160',
@@ -50,14 +50,14 @@ class UserController extends Controller
                 $size = config('constants.user.profile.size');
                 $filename = upload_image($request->avatar, $path, $size, $filename);
             } catch (\Exception $exp) {
-                $notify[] = ['success', 'Image could not be uploaded'];
-                return back()->withNotify($notify);
+                // $notify[] = ['success', 'Image could not be uploaded'];
+                return back()->with('error', 'Image could not be uploaded');
             }
         }
 
         auth()->user()->update([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
+            'name' => $request->name,
+            // 'last_name' => $request->last_name,
             'avatar' => $filename,
             'address' => [
                 'address' => $request->address,
@@ -67,8 +67,8 @@ class UserController extends Controller
                 'country' => $request->country,
             ]
         ]);
-        $notify[] = ['success', 'Your profile has been updated'];
-        return back()->withNotify($notify);
+        // $notify[] = ['success', 'Your profile has been updated'];
+        return back()->with('success', 'Your profile has been updated');
     }
 
     public function changePass()
@@ -85,12 +85,12 @@ class UserController extends Controller
         ]);
 
         if (!Hash::check($request->old_password, auth()->user()->password)) {
-            return back()->withErrors("Your old password doesn't match");
+            return back()->with('error','Your old password doesnot match');
         }
         auth()->user()->update([
             'password' => Hash::make($request->password)
         ]);
-        $notify[] = ['success', 'Your password has been updated'];
+        // $notify[] = ['success', 'Your password has been updated'];
         return back()->with('success', 'Your password has been updated');
     }
 
