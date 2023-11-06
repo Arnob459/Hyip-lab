@@ -19,9 +19,9 @@
             <thead>
                 <tr>
                     <th scope="col">@lang('Transaction ID')</th>
+                    <th scope="col">@lang('Gateway')</th>
                     <th scope="col">@lang('Amount')</th>
-                    <th scope="col">@lang('Balance')</th>
-                    <th scope="col">@lang('Details')</th>
+                    <th scope="col">@lang('Status')</th>
                     <th scope="col">@lang('Action')</th>
                 </tr>
             </thead>
@@ -30,23 +30,25 @@
                 @if ($logs->count() == 0)
                     <tr>
                         <td class="text-center" colspan="5">
-                            @lang('No data found')
+                           @lang('No data found')
                         </td>
-
                     </tr>
                 @endif
 
                 @foreach($logs as $log)
                     <tr>
-                        <td class="">#{{$log->trx}}</td>
-                        <td class="@if($log->trx_type == '+') cl-green @elseif ($log->trx_type == '-') cl-red
-                             @endif ">{{$log->trx_type}}{{formatter_money($log->amount)}} {{$gnl->cur}}</td>
-                        <td class="cl-mint">{{formatter_money($log->post_balance)}} {{$gnl->cur}}
-                            @if ($log->type == 1) <span class="badge bg-info"> @lang('Deposit Wallet')</span> @else
-                            <span class="badge bg-warning">@lang('Interest Wallet')</span>
-                        @endif </td>
-                        <td >{{$log->details}}</td>
-                        <td><a href="{{route('user.transactions.details', [$log->trx, $log->id] )}}" title="details"
+                        <td class="cl-white">#{{$log->trx}}</td>
+                        <td class="cl-yellow">{{ $log->gateway->name   }}</td>
+                        <td class="cl-mint">{{$gnl->cur_sym}}  {{formatter_money($log->amount)}}</td>
+                        <td> @if($log->status == 1)
+                                <span class="badge bg-success">@lang('Complete')</span>
+                            @elseif($log->status == 2)
+                                <span class="badge bg-warning">@lang('Pending')</span>
+                            @elseif($log->status == 3)
+                                <span class="badge bg-danger">@lang('Cancel')</span>
+
+                            @endif</td>
+                        <td><a href="{{route('user.deposit.details', [$log->trx, $log->id] )}}" title="details"
                                class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                     </tr>
                 @endforeach

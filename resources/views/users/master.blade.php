@@ -87,16 +87,16 @@
                         <li class="nav-item"><a class="nav-link " href="deposit.html"><i class="fas fa-coins"></i>Deposit Now</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link " href="deposit.html"><i class="flaticon-exchange"></i>Deposit History</a>
+                        <li class="nav-item"><a class="nav-link { Route::is('user.deposit.history') ? 'active' : '' }}" href="{{route('user.deposit.history')}}"><i class="flaticon-exchange"></i>Deposit History</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link "href="withdraw.html"><i class="flaticon-atm"></i>Withdraw</a>
+                        <li class="nav-item"><a class="nav-link { Route::is('user.withdraw') ? 'active' : '' }}"href="{{route('user.withdraw')}}"><i class="flaticon-atm"></i>Withdraw</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link " href="partners.html"><i class="flaticon-exchange"></i>Withdraw History</a>
+                        <li class="nav-item"><a class="nav-link { Route::is('user.withdraw.history') ? 'active' : '' }}" href="{{route('user.withdraw.history')}}"><i class="flaticon-exchange"></i>Withdraw History</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link " href="ticket.html"><i class="flaticon-deal"></i>Transactions</a>
+                        <li class="nav-item"><a class="nav-link { Route::is('user.transactions') ? 'active' : '' }}" href="{{route('user.transactions')}}"><i class="flaticon-deal"></i>Transactions</a>
                         </li>
 
                         <li class="nav-item"><a class="nav-link {{ Route::is('user.referral.statistic') ? 'active' : '' }}" href="{{ route('user.referral.statistic') }}"><i class="fas fa-users"></i>Referral Statistic</a>
@@ -136,7 +136,7 @@
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                                aria-haspopup="true" aria-expanded="false">Investment</a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href=" /investment-plans">Investment plans</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('user.plan.index') }}">Investment plans</a></li>
                                                 <li><a class="dropdown-item" href="{{route('user.invest.history')}}">Investment return</a></li>
                                                 <li><a class="dropdown-item" href=" {{route('user.invest.return.history')}}">Investment return history</a></li>
                                             </ul>
@@ -146,7 +146,7 @@
                                                aria-haspopup="true" aria-expanded="false">Deposit</a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href=" /deposit">Deposit now</a></li>
-                                                <li><a class="dropdown-item" href=" /deposit/history">Deposit history</a>
+                                                <li><a class="dropdown-item" href=" {{route('user.deposit.history')}}">Deposit history</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -154,8 +154,8 @@
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                                aria-haspopup="true" aria-expanded="false">Withdraw</a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href=" /withdraw">Withdraw now</a></li>
-                                                <li><a class="dropdown-item" href=" /withdraw/history">Withdraw history</a>
+                                                <li><a class="dropdown-item" href="{{route('user.withdraw')}}">Withdraw now</a></li>
+                                                <li><a class="dropdown-item" href="{{route('user.withdraw.history')}}">Withdraw history</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -169,7 +169,7 @@
                                             </ul>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="">Transactions</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('user.transactions')}}">Transactions</a></li>
 
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -234,6 +234,7 @@
                         <script src="{{ asset('assets/frontend/js/chart.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/circle-progress.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+                        @stack('js')
 
                         <script>
                             @if (Session::has('success'))

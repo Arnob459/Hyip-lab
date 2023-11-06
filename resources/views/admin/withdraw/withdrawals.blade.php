@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>{{ show_datetime($withdraw->created_at) }}</td>
                                     <td class="font-weight-bold">{{ strtoupper($withdraw->trx) }}</td>
-                                    <td><a href="{{route('admin.users.show', $withdraw->user_id)}}">{{ $withdraw->user->username }}</a></td>
+                                    <td><a href="{{route('admin.user.edit', $withdraw->user_id)}}">{{ $withdraw->user->username }}</a></td>
                                     <td>{{ $withdraw->method->name }}</td>
                                     <td class="budget font-weight-bold">{{ $withdraw->amount +0 }} {{$gnl->cur_text}}</td>
                                     <td class="budget text-danger">{{$gnl->cur_sym}} {{ formatter_money($withdraw->charge) }}</td>
@@ -61,11 +61,11 @@
                                     @elseif(request()->routeIs('admin.withdraw.log') || request()->routeIs('admin.withdraw.search') || request()->routeIs('admin.users.withdrawals'))
                                         <td>
                                             @if($withdraw->status == 2)
-                                                <span class="badge badge-warning">@lang('Pending')</span>
+                                                <span class="badge bg-warning">@lang('Pending')</span>
                                             @elseif($withdraw->status == 1)
-                                                <span class="badge badge-success">@lang('Approved')</span>
+                                                <span class="badge bg-success">@lang('Approved')</span>
                                             @elseif($withdraw->status == 3)
-                                                <span class="badge badge-danger">@lang('Rejected')</span>
+                                                <span class="badge bg-danger">@lang('Rejected')</span>
                                             @endif
                                         </td>
                                     @endif
@@ -104,7 +104,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">@lang('View Withdraw Details')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -114,7 +114,7 @@
                     <p class="mt-3"> @lang('ADMIN RESPONSE WAS'): <br> <span class="admin-detail"></span></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">@lang('Close')</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">@lang('Close')</button>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">@lang('View Withdraw Information')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -135,7 +135,7 @@
                     <p class="withdraw-detail"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">@lang('Close')</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">@lang('Close')</button>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">@lang('Approve Withdrawal Confirmation')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -159,7 +159,7 @@
                         <textarea name="details" class="form-control pt-3" rows="3" placeholder="Provide the Details. eg: Transaction number" required=""></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">@lang('Close')</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">@lang('Close')</button>
                         <button type="submit" class="btn btn-success">@lang('Approve')</button>
                     </div>
                 </form>
@@ -173,7 +173,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">@lang('Reject Withdrawal Confirmation')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -185,7 +185,7 @@
                         <textarea name="details" class="form-control pt-3" rows="3" placeholder="Provide the Details" required=""></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">@lang('Close')</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">@lang('Close')</button>
                         <button type="submit" class="btn btn-danger">@lang('Reject')</button>
                     </div>
                 </form>

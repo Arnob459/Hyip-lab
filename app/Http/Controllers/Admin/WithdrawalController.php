@@ -61,17 +61,17 @@ class WithdrawalController extends Controller
 
         $general = Setting::first();
 
-        notify($withdraw->user, 'WITHDRAW_APPROVE', [
-            'method_name' => $withdraw->method->name,
-            'method_currency' => $withdraw->currency,
-            'method_amount' => formatter_money($withdraw->final_amount),
-            'amount' => formatter_money($withdraw->amount),
-            'charge' => formatter_money($withdraw->charge),
-            'currency' => $general->cur,
-            'rate' => $withdraw->rate +0,
-            'trx' => $withdraw->trx,
-            'admin_details' => $request->details
-        ]);
+        // notify($withdraw->user, 'WITHDRAW_APPROVE', [
+        //     'method_name' => $withdraw->method->name,
+        //     'method_currency' => $withdraw->currency,
+        //     'method_amount' => formatter_money($withdraw->final_amount),
+        //     'amount' => formatter_money($withdraw->amount),
+        //     'charge' => formatter_money($withdraw->charge),
+        //     'currency' => $general->cur,
+        //     'rate' => $withdraw->rate +0,
+        //     'trx' => $withdraw->trx,
+        //     'admin_details' => $request->details
+        // ]);
 
         return redirect()->route('admin.withdraw.pending')->with('success', 'Withdrawal Marked  as Approved.');
     }
@@ -100,18 +100,18 @@ class WithdrawalController extends Controller
             'type' => 2,
         ]);
 
-        notify($withdraw->user, 'WITHDRAW_REJECT', [
-            'method_name' => $withdraw->method->name,
-            'method_currency' => $withdraw->currency,
-            'method_amount' => formatter_money($withdraw->final_amount),
-            'amount' => formatter_money($withdraw->amount),
-            'charge' => formatter_money($withdraw->charge),
-            'currency' => $general->cur,
-            'rate' => $withdraw->rate +0,
-            'trx' => $withdraw->trx,
-            'post_balance' => $user->balance +0,
-            'admin_details' => $request->details
-        ]);
+        // notify($withdraw->user, 'WITHDRAW_REJECT', [
+        //     'method_name' => $withdraw->method->name,
+        //     'method_currency' => $withdraw->currency,
+        //     'method_amount' => formatter_money($withdraw->final_amount),
+        //     'amount' => formatter_money($withdraw->amount),
+        //     'charge' => formatter_money($withdraw->charge),
+        //     'currency' => $general->cur,
+        //     'rate' => $withdraw->rate +0,
+        //     'trx' => $withdraw->trx,
+        //     'post_balance' => $user->balance +0,
+        //     'admin_details' => $request->details
+        // ]);
 
         return redirect()->route('admin.withdraw.pending')->with('success', 'Withdrawal has been rejected.');
     }
