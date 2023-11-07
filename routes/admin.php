@@ -27,6 +27,8 @@ Route::name('admin.')->group(function() {
         //Dashboard
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
+        Route::get('user/auto-login/{id}', [AdminController::class, 'autoLogin'])->name('auto.login');
+
           //Profile
           Route::get('/profile', [AdminController::class, 'Profile'])->name('profile');
           Route::post('/profile',[AdminController::class,'profileUpdate'])->name('profile.update');

@@ -28,9 +28,14 @@
                                         @foreach ($users as $user)
                                         <td>
                                              @if ($user->avatar !=null)
-                                            <img src="{{asset('assets/images/users/'.$user->avatar)}}" alt="..." class="avatar-img rounded-circle">
+                                             <div class="avatar avatar-xl  ">
+                                            <img class="avatar-img rounded-circle" src="{{asset('assets/images/users/'.$user->avatar)}}" >
+                                            </div>
                                             @else
-                                            <span class="avatar-title rounded-circle border border-dark">{{\Illuminate\Support\Str::limit($user->name, 1 ,'')}}</span>
+                                            <div class="avatar avatar-xl  ">
+                                            <span class="avatar-text rounded-circle border border-dark">{{\Illuminate\Support\Str::limit($user->name, 1 ,'')}}</span>
+                                        </div>
+
                                             @endif
                                         </td>
                                         <td>{{ $user->name }}</td>

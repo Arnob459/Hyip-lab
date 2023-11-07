@@ -153,7 +153,7 @@ function send_general_email($email, $subject, $message, $receiver_name = '')
 function send_email($user, $type, $shortcodes = [])
 {
     $general = Setting::first();
-    $email_template = \App\EmailTemplate::where('act', $type)->where('email_status', 1)->first();
+    $email_template = \App\Models\EmailTemplate::where('act', $type)->where('email_status', 1)->first();
     if ($general->en != 1 || !$email_template) {
         return;
     }
@@ -224,7 +224,7 @@ function send_smtp_mail($config, $receiver_email, $receiver_name, $sender_email,
 
 function send_sendgrid_mail($config, $receiver_email, $receiver_name, $sender_email, $sender_name, $subject, $message)
 {
-    require 'core/app/Http/Helpers/Lib/Sendgrid/vendor/autoload.php';
+    require 'app/Http/Helpers/Lib/Sendgrid/vendor/autoload.php';
 
     $sendgridMail = new \SendGrid\Mail\Mail();
     $sendgridMail->setFrom($sender_email, $sender_name);
@@ -241,7 +241,7 @@ function send_sendgrid_mail($config, $receiver_email, $receiver_name, $sender_em
 
 function send_mailjet_mail($config, $receiver_email, $receiver_name, $sender_email, $sender_name, $subject, $message)
 {
-    require 'core/app/Http/Helpers/Lib/Mailjet/vendor/autoload.php';
+    require 'app/Http/Helpers/Lib/Mailjet/vendor/autoload.php';
     $mj = new \Mailjet\Client($config->public_key, $config->secret_key, true, ['version' => 'v3.1']);
     $body = [
         'Messages' => [
@@ -269,7 +269,7 @@ function send_mailjet_mail($config, $receiver_email, $receiver_name, $sender_ema
 function send_sms($user, $type, $shortcodes = [])
 {
     $general = Setting::first(['sn', 'smsapi']);
-    $sms_template = \App\SmsTemplate::where('act', $type)->where('sms_status', 1)->first();
+    $sms_template = \App\Models\SmsTemplate::where('act', $type)->where('sms_status', 1)->first();
     if ($general->sn == 1 && $sms_template) {
         $template = $sms_template->sms_body;
         foreach ($shortcodes as $code => $value) {

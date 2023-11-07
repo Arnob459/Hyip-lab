@@ -8,7 +8,7 @@
     <div class="sidebar-wrapper active">
 
             <div class=" d-flex justify-content-center m-4 " >
-                    <a href="{{ route('admin.dashboard') }}"><img height="50vh" src="{{ asset('assets/admin/images/logo/logo.png') }}" alt="Logo" srcset=""></a>
+                    <a href="{{ route('admin.dashboard') }}"><img height="50vh" src="{{asset('assets/images/logo/'. $gnl->favicon )}}" alt="Logo" srcset=""></a>
             </div>
 
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">

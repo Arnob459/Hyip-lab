@@ -21,12 +21,12 @@ class AdminController extends Controller
 
 
 
-    //   public function autoLogin($id)
-    //  {
-    //      $user = User::findOrFail($id);
-    //      Auth::login($user);
-    //      return redirect()->route('user.home');
-    //  }
+      public function autoLogin($id)
+     {
+         $user = User::findOrFail($id);
+         Auth::login($user);
+         return redirect()->route('user.home');
+     }
 
 
     public function dashboard()
