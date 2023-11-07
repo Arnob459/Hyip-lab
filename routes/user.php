@@ -6,19 +6,24 @@ use App\Http\Controllers\UserPlanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RefController;
 use App\Http\Controllers\AuthorizationController;
-
-
+use App\Http\Controllers\ResetPasswordController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-
-
 
 use Illuminate\Support\Facades\Route;
 
 
 
     Route::name('user.')->group(function() {
+
+        Route::get('user/password/reset', [ForgotPasswordController::class, 'from'])->name('password.request');
+        Route::post('user/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+        Route::post('user/password/verify-code', [ForgotPasswordController::class, 'verifyCode'])->name('password.verify-code');
+        Route::get('user/password/reset/{token}', [ResetPasswordController::class, 'showReset'])->name('password.reset');
+        Route::post('user/password/reset/now', [ResetPasswordController::class, 'reset'])->name('password.update.now');
+
+
         Route::middleware(['auth'])->group(function () {
 
             Route::get('authorization', [AuthorizationController::class, 'authorizeForm'])->name('authorization');

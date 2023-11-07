@@ -5,14 +5,14 @@
     <div class="account-section bg_img" data-background="{{ asset('assets/frontend/images/account-bg.jpg') }}">
         <div class="container">
             <div class="account-title text-center">
-                <a href="{{ route('index') }}" class="back-home"><i class="fas fa-angle-left"></i><span>Back <span class="d-none d-sm-inline-block">To Hyipland</span></span></a>
+                <a href="{{ route('index') }}" class="back-home nav-link"><i class="fas fa-angle-left"></i><span>Back <span class="d-none d-sm-inline-block">To Hyipland</span></span></a>
                 <a href="#0" class="logo">
-                    <img src="{{ asset('assets/frontend/images/logo/footer-logo.png') }}" alt="logo">
+                    <img src="{{asset('assets/images/logo/'. $gnl->logo )}}" alt="logo">
                 </a>
             </div>
             <div class="account-wrapper">
                 <div class="account-body">
-                    <h4 class="title mb-20">Welcome To Hyipland</h4>
+                    <h4 class="title mb-20">Welcome To {{ $gnl->site_name }}</h4>
                         <form class="account-form" method="POST" action="{{ route('login') }}">
                             @csrf
                         <div class="form-group">
@@ -32,7 +32,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                            <span class="sign-in-recovery">Forgot your password? <a href="#0">recover password</a></span>
+                            <span class="sign-in-recovery">Forgot your password? <a href="{{ route('password.request') }}">forget password</a></span>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="mt-2 mb-2">Sign In</button>

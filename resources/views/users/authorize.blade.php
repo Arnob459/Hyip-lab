@@ -4,8 +4,8 @@
     <div class="account-section bg_img" data-background="{{ asset('assets/frontend/images/account-bg.jpg') }}">
         <div class="container">
             <div class="account-title text-center">
-                <a href="{{ route('index') }}" class="back-home"><i class="fas fa-angle-left"></i><span>Back <span class="d-none d-sm-inline-block">To {{ $gnl->site_name }}</span></span></a>
-                <a href="#0" class="logo">
+                <a href="{{ route('index') }}" class="back-home nav-link"><i class="fas fa-angle-left"></i><span>Back <span class="d-none d-sm-inline-block">To {{ $gnl->site_name }}</span></span></a>
+                <a href="{{ route('index') }}" class="logo">
                     <img src="{{asset('assets/images/logo/'. $gnl->favicon )}}" alt="logo">
                 </a>
             </div>
