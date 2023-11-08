@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body ">
                     <div class="table-responsive  ">
-                        <table  class="display table  table-hover" >
+                        <table  class="table  table-hover" >
                             <thead>
                             <tr>
                                 <th scope="col">@lang('Date')</th>
@@ -40,7 +40,7 @@
                                     <td> @if ($trx->type == 1)
                                             <span class="badge  small bg-light-info">@lang('deposit wallet')</span>
                                         @else
-                                            <span class="badge small bg-light-warning">@lang('interest wallet')</span>
+                                            <span class="badge small bg-light-warning">@lang('Bonus wallet')</span>
                                         @endif</td>
                                     <td>{{ $trx->details }}</td>
                                 </tr>
@@ -52,9 +52,10 @@
                             </tbody>
                         </table>
 
-
+                        <ul class="pagination-overfollow">
+                            <p>{{ $transactions->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+                        </ul>
                     </div>
-                    {{ $transactions->links() }}
                 </div>
             </div>
         </div>

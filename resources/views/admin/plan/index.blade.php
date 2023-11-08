@@ -3,7 +3,7 @@
 @section('content')
 
 @push('button')
-<a href="{{ route('admin.plan.create') }}" class="btn btn-warning ">Add New Plan</a>
+<a href="{{ route('admin.plan.create') }}" class="btn custom-button ">Add New Plan</a>
 @endpush
 
                 <section class="section">
@@ -12,13 +12,13 @@
                             Manage Plan
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped" id="table1">
+                            <table class="table table-hover table-responsive" id="table1">
                                 <thead>
                                     <tr>
                                         <th>Image</th>
                                         <th>Plan Name</th>
                                         <th>Invest Amount</th>
-                                        <th>Interest</th>
+                                        <th>Bonus</th>
                                         <th>Repeat</th>
                                         <th>Lifetime</th>
                                         <th>Capital Lock</th>
@@ -48,7 +48,7 @@
 
                                             @endif
                                         </td>
-                                        <td>{{formatter_money($plan->interest)}}</td>
+                                        <td>{{formatter_money($plan->interest)}} @if($plan->interest_status == 1) % @else {{$gnl->cur}}@endif</td>
                                         <td>{{($plan->times)}} @if ($plan->lifetime != 1) {{($plan->repeat_time)}} times @endif</td>
                                         <td>
                                             @if ($plan->lifetime == 1)

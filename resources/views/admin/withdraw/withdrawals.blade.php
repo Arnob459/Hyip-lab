@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table  class="display table  table-hover" >
+                        <table  class="table  table-hover" >
                             <thead>
                             <tr>
                                 <th scope="col">@lang('Date')</th>
@@ -87,10 +87,11 @@
                             @endforelse
                             </tbody>
                         </table>
-
+                        <ul class="pagination-overfollow">
+                            <p>{{ $withdrawals->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+                        </ul>
 
                     </div>
-                    {{ $withdrawals->links() }}
                 </div>
             </div>
         </div>

@@ -141,7 +141,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8 ">
-                                                    <h6 >Interest Wallet Balance</h6>
+                                                    <h6 >Bonus Wallet Balance</h6>
                                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($user->interest_balance)}}</h6>
                                                 </div>
                                             </div>
@@ -177,7 +177,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8 ">
-                                                    <h6 class="">Total Interest Return</h6>
+                                                    <h6 class="">Total Bonus Return</h6>
                                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($total_interest_return)}}</h6>
                                                 </div>
                                             </div>
@@ -291,7 +291,7 @@
                                 </div>
 
                                 <div class="col-sm-4 ">
-                                    <a href="{{route('admin.report.interest') . '?user='.$user->id}}"   class="btn btn-primary btn-block me-1 mb-3">Interest history</a>
+                                    <a href="{{route('admin.report.interest') . '?user='.$user->id}}"   class="btn btn-primary btn-block me-1 mb-3">Bonus history</a>
 
 
                                 </div>
@@ -543,20 +543,20 @@
     <style>
         /* Custom CSS class to change card color */
         .custom-card {
-            background-color: #62b928; /* Change this to your desired color */
+            background-color: #80bc58; /* Change this to your desired color */
             color: white; /* Change text color to contrast with the background */
         }
         .custom-card2 {
-            background-color: #5b3bdf; /* Change this to your desired color */
+            background-color: #8771de; /* Change this to your desired color */
             color: white; /* Change text color to contrast with the background */
         }
         .custom-card3 {
-            background-color: #c21aec; /* Change this to your desired color */
+            background-color: #c266d8; /* Change this to your desired color */
             color: white; /* Change text color to contrast with the background */
         }
 
         .custom-card4 {
-            background-color: #1585d6; /* Change this to your desired color */
+            background-color: #5398c9; /* Change this to your desired color */
             color: white; /* Change text color to contrast with the background */
         }
     </style>

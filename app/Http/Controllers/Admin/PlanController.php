@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Plan;
 use Illuminate\Support\Facades\Validator;
-// use Illuminate\Support\Facades\Storage;
-// use Image;
+
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Intervention\Image\Facades\Image;
 
@@ -33,12 +32,14 @@ class PlanController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'amount_type' => 'required|in:1,2',
-            'min_amount' => $request->input('amount_type') === '1' ? 'required|numeric|min:1' : '',
-            'max_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gte:min_amount' : '',
-            'fixed_amount' => $request->input('amount_type') === '2' ? 'required|numeric|min:1' : '',
+            'minimum_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gt:0' : '',
+            'maximum_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gt:minimum_amount' : '',
+            'fixed_amount' => $request->input('amount_type') === '2' ? 'required|numeric|gt:0' : '',
             'times' => 'required|string|max:20',
-            'interest' => 'required|numeric|min:0',
+            'interest' => 'required|numeric|gt:0',
             'interest_status' => 'required|integer|min:0|max:1',
+            'return_interest' => 'required|integer|min:1',
+            'repeat_time' => $request->input('return_interest') != '1' ? 'required|integer|min:1|max:999999999999' : '',
             'capital_back' => 'required|integer|min:0|max:1',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 
@@ -51,7 +52,7 @@ class PlanController extends Controller
                 $filename = upload_image($request->image, $path, $size);
             } catch (\Exception $exp) {
 
-                return back()->withWarning('Image could not be uploaded');
+                return back()->with('error','Image could not be uploaded');
             }
         }
         $plan = new Plan ;
@@ -67,8 +68,8 @@ class PlanController extends Controller
         $plan->image = $filename;
 
         if ($request->input('amount_type') === '1') {
-            $plan->minimum_amount = $request->input('min_amount');
-            $plan->maximum_amount = $request->input('max_amount');
+            $plan->minimum_amount = $request->input('minimum_amount');
+            $plan->maximum_amount = $request->input('maximum_amount');
         } elseif ($request->input('amount_type') === '2') {
             $plan->fixed_amount = $request->input('fixed_amount');
         }
@@ -96,11 +97,13 @@ class PlanController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'amount_type' => 'required|in:1,2',
-            'min_amount' => $request->input('amount_type') === '1' ? 'required|numeric|min:1' : '',
-            'max_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gte:min_amount' : '',
-            'fixed_amount' => $request->input('amount_type') === '2' ? 'required|numeric|min:1' : '',
+            'minimum_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gt:0' : '',
+            'maximum_amount' => $request->input('amount_type') === '1' ? 'required|numeric|gt:minimum_amount' : '',
+            'fixed_amount' => $request->input('amount_type') === '2' ? 'required|numeric|gt:0' : '',
             'times' => 'required|string|max:20',
-            'interest' => 'required|numeric|min:0',
+            'interest' => 'required|numeric|gt:0',
+            'return_interest' => 'required|integer|min:1',
+            'repeat_time' => $request->input('return_interest') != '1' ? 'required|integer|min:1|max:999999999999' : '',
             'interest_status' => 'required|integer|min:0|max:1',
             'capital_back' => 'required|integer|min:0|max:1',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
@@ -135,8 +138,8 @@ class PlanController extends Controller
 
 
         if ($request->input('amount_type') === '1') {
-            $plan->minimum_amount = $request->input('min_amount');
-            $plan->maximum_amount = $request->input('max_amount');
+            $plan->minimum_amount = $request->input('minimum_amount');
+            $plan->maximum_amount = $request->input('maximum_amount');
             $plan->fixed_amount = 0;
 
         } elseif ($request->input('amount_type') === '2') {

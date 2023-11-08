@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="col-xl-12 col-lg-12">
-                                <label id="balance_limit_label">@lang('You Interest Balance Will Be') : {{$gnl->cur}} </label>
+                                <label id="balance_limit_label">@lang('You Bonus Balance Will Be') : {{$gnl->cur}} </label>
                                 <input type="text" value="{{formatter_money(auth()->user()->interest_balance)}}"
                                        id="afterBalance" readonly="readonly">
                             </div>

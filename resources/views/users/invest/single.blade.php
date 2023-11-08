@@ -20,7 +20,7 @@
                 <div class="col-sm-3 col-5">
                     <div class="left-info">
                         <p>@lang('Plan Name') :</p>
-                        <p>@lang('Payable Interest') :</p>
+                        <p>@lang('Payable Bonus') :</p>
                         <p>@lang('Period') :</p>
                         <p>@lang('Received') :</p>
                         <p>@lang('Capital Back') :</p>

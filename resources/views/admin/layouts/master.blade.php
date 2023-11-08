@@ -11,19 +11,13 @@
     <link rel="shortcut icon" href="{{ asset('assets/admin/images/logo/' .$gnl->favicon)}}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
-
-    <script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script>
-
-
-    <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
     <!-- Toastr CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
-    <!-- Toastr JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
+    <link rel="stylesheet" href="{{ asset('assets/admin/toastr/css/toastr.css') }}">
 
 </head>
+    {{-- @if(session()->has('toastr'))
+    {!! session('toastr') !!}
+    @endif --}}
 @include('admin.layouts.sidebar')
     <div id="main">
         <header class='mb-3'>
@@ -73,11 +67,11 @@
                 </div>
             </nav>
         </header>
-        @if (session('error'))
+        {{-- @if (session('error'))
         <div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i> {{session('error')}}</div>
-        @endif
+        @endif --}}
 
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div class="alert alert-warning">
 
                 <ul>
@@ -86,7 +80,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
 
         {{-- @if (session('success'))
@@ -132,16 +126,35 @@
 </div>
 <script src="{{ asset('assets/admin/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/admin/js/app.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/admin/toastr/js/toastr.js') }}"></script>
 
-<script>
-    @if (Session::has('success'))
-        toastr.options = {
-            "progressBar": true,
-            "closeButton": true,
-        }
-        toastr.success("{{ Session('success') }}");
+
+    <script>
+        @if (Session::has('success'))
+            toastr.options = {
+                "progressBar": true,
+                "closeButton": true,
+            }
+            toastr.success("{{ Session('success') }}");
+        @endif
+    </script>
+    @if ($errors->any())
+        <script>
+            @foreach ($errors->all() as $error)
+
+                toastr.options = {
+                "progressBar": true,
+                "closeButton": true,
+            }
+            toastr.error("{{ $error }}");
+
+            @endforeach
+
+        </script>
     @endif
-</script>
+
 
 @stack('datatable')
 

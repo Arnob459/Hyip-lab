@@ -54,7 +54,7 @@ class UserPlanController extends Controller
             $type = 1;
         } else {
             if ($user->interest_balance < $amount) {
-                return back()->withErrors('Insufficient balance in your interest wallet');
+                return back()->with('error','Insufficient balance in your interest wallet');
             }
             $user->interest_balance -= $amount;
             $user->save();

@@ -467,7 +467,7 @@
                 </div>
 
                 <div class="page-heading">
-                    <h3>Interest Return Statistics</h3>
+                    <h3>Bonus Return Statistics</h3>
                 </div>
 
                 <div class="col-6 col-lg-4 col-md-6">
@@ -480,7 +480,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 ">
-                                    <h6 class="text-muted font-semibold">Total Interest Return</h6>
+                                    <h6 class="text-muted font-semibold">Total Bonus Return</h6>
                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$total_interest_return}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
@@ -497,7 +497,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 ">
-                                    <h6 class="text-muted font-semibold">Today Interest Return</h6>
+                                    <h6 class="text-muted font-semibold">Today Bonus Return</h6>
                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$today_interest_return}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
@@ -514,7 +514,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 ">
-                                    <h6 class="text-muted font-semibold">Yesterday Interest Return</h6>
+                                    <h6 class="text-muted font-semibold">Yesterday Bonus Return</h6>
                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$yesterday_interest_return}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
@@ -531,7 +531,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 ">
-                                    <h6 class="text-muted font-semibold">Last 7 days Interest Return</h6>
+                                    <h6 class="text-muted font-semibold">Last 7 days Bonus Return</h6>
                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$last_7_day_interest_return}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
@@ -549,7 +549,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 ">
-                                    <h6 class="text-muted font-semibold">Last 30 days Interest Return</h6>
+                                    <h6 class="text-muted font-semibold">Last 30 days Bonus Return</h6>
                                     <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$this_month_interest_return}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>

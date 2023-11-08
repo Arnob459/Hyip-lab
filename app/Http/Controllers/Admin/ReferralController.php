@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Referral;
 use App\Models\Setting;
 use App\Models\SettingExtra;
+use Illuminate\Support\Facades\Validator;
+
 
 class ReferralController extends Controller
 {
@@ -25,7 +27,7 @@ class ReferralController extends Controller
 
 
         $request->validate([
-            'percent.*' => 'required|numeric|min:1',
+            'percent.*' => 'required|numeric|gt:0',
         ]);
 
         Referral::truncate();

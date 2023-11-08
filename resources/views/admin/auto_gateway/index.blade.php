@@ -9,8 +9,7 @@
                     <h4 class="card-title">{{$page_title}}</h4>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="basic-datatables" class="display table  table-hover">
+                        <table class="table table-hover table-responsive" id="table1">
                             <thead>
                             <tr>
                                 <th>@lang('Sl')</th>
@@ -112,7 +111,6 @@
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
                 </div>
             </div>
         </div>

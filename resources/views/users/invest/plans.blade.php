@@ -99,7 +99,7 @@
                                             @else
                                                 <h4 >@lang('Limit') : {{formatter_money($plan->minimum_amount)}} - {{formatter_money($plan->maximum_amount)}} {{$gnl->cur}} </h4>
                                         @endif
-                                                <h5>@lang('Interest') : {{$plan->interest}} @if ($plan->interest_status == 1)
+                                                <h5>@lang('Bonus') : {{$plan->interest}} @if ($plan->interest_status == 1)
                                                         % @else {{$gnl->cur}}
                                                     @endif </h5>
 
@@ -115,7 +115,7 @@
                                             <label for="recipient-name" class="col-form-label">@lang('Select Wallet'):</label>
                                             <select class="form-control form-control-lg" name="wallet">
                                                 <option value="0">@lang('Deposit wallet') ({{formatter_money(auth()->user()->balance)}})</option>
-                                                <option value="1">@lang('Interest wallet') ({{formatter_money(auth()->user()->interest_balance)}})</option>
+                                                <option value="1">@lang('Bonus wallet') ({{formatter_money(auth()->user()->interest_balance)}})</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

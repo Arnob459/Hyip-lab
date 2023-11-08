@@ -15,7 +15,7 @@
 <div class="container-fluid">
 
     <div class="table-wrapper">
-        <table class="transaction-table">
+        <table class="table table-hover" id="table1">
             <thead>
                 <tr>
                     <th scope="col">@lang('Transaction ID')</th>
@@ -43,7 +43,7 @@
                              @endif ">{{$log->trx_type}}{{formatter_money($log->amount)}} {{$gnl->cur}}</td>
                         <td class="cl-mint">{{formatter_money($log->post_balance)}} {{$gnl->cur}}
                             @if ($log->type == 1) <span class="badge bg-info"> @lang('Deposit Wallet')</span> @else
-                            <span class="badge bg-warning">@lang('Interest Wallet')</span>
+                            <span class="badge bg-warning">@lang('Bonus Wallet')</span>
                         @endif </td>
                         <td >{{$log->details}}</td>
                         <td><a href="{{route('user.transactions.details', [$log->trx, $log->id] )}}" title="details"
@@ -53,11 +53,9 @@
                 </tbody>
         </table>
 
-            <ul class="pagination-overfollow">
-
-                <p>{{ $logs->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
-
-            </ul>
+        <ul class="pagination-overfollow">
+            <p>{{ $logs->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+        </ul>
     </div>
 </div>
 

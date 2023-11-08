@@ -16,12 +16,12 @@
 
                     <div class="col-md-5">
                         <div class="form-group">
-                            <label for="basicInput">Reward Name</label>
+                            <label for="basicInput" class="mb-2">Reward Name</label>
                             <input type="text" name="name" class="form-control form-control-lg" id="basicInput" placeholder="Enter Reward Name" value="{{ $reward->name }}" >
                         </div>
                     </div>
 
-                    <div class="col-md-3" >
+                    <div class="col-md-4" >
                         <div class="form-group">
                             <label class="form-label">Set Time Limit </label>
                             <div class="selectgroup w-100">
@@ -40,7 +40,7 @@
                         <div id="1" style="display: {{ $reward->hours != '0' ? 'block' : 'none' }}">
 
                             <div class="form-group">
-                                <label for="basicInput">Hours</label>
+                                <label for="basicInput" class="mb-2">Hours</label>
                                 <input type="number" name="hours" class="form-control form-control-lg" id="basicInput" value="{{ $reward->hours }}" >
                             </div>
                         </div>
@@ -56,32 +56,39 @@
 
 
 
-                    <div class="col-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="contact-info-vertical">Status</label>
-                            <select name="status"  class="form-select" >
+                            <label for="iconSelector">Status</label>
+                            <select name="status"  class="form-select form-control-lg" >
                                 <option value="1"@if ($reward->status == '1') selected @endif>Active</option>
                                 <option value="0"@if ($reward->status == '0') selected @endif>Deactivate</option>
 
                             </select>
                         </div>
                     </div>
-
-                    <div class="form-group col-md-7">
-                            <label class="col-lg-4 col-md-3 col-sm-4 mt-sm-2">Upload Image <span class="required-label">*</span></label>
-                            <div class="col-lg-12">
-                                <img class="img-upload-preview mb-2 " style="height:100px" src="{{asset('assets/images/reward/' . $reward->image)}}"  alt="preview">
-                                <div class="input-file input-file-image">
-
-                                    <input type="file" class="form-control " id="uploadImg" name="image" accept="image/*" hidden >
-                                    <label for="uploadImg" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload a Image</label>
-                                </div>
-                            </div>
-                            <p class="text-warning mb-0">Only jpg, jpeg, png image allowed.</p>
-                    </div>
-
-
                 </div>
+                <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="col-lg-12 ">Upload Image  <span class="required-label">*</span></label>
+                    <div class="col-lg-6 mb-3">
+                        <div class="form-group input-file-image">
+                            <img  src="{{ asset('assets/images/reward/'.$reward->image) }}" alt="Image Preview" id="image-preview"  width="auto" height="auto"
+                            style="max-height: 350px;" >
+                        </div>
+
+                        <div class="input-file input-file-image">
+
+                            <input type="file" class="form-control " id="image" name="image" accept="image/*" hidden >
+                            <label for="image" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload </label>
+                        </div>
+                    </div>
+                    <p class="text-warning mb-0">Image Will Resize 870x225.</p>
+                    <p class="text-warning mb-0">Only jpg, jpeg, png image allowed.</p>
+                </div>
+                </div>
+
+
+
 
                 <div class="card-header">
                     <h4 class="card-title">Current rewards</h4>
@@ -163,7 +170,20 @@
     </div>
 
 </section>
+<style>
+    .btn-outline-danger {
 
+    height: 45px;
+    width: 155px;
+    font-size: 16px;
+    }
+    .btn-outline-success {
+
+    height: 45px;
+    width: 155px;
+    font-size: 16px;
+    }
+  </style>
 @endsection
 
 @push('reward')
@@ -211,5 +231,25 @@ $(document).ready(function() {
         $(this).closest("tr").remove();
     });
 });
+</script>
+@endpush
+@push('js')
+{{-- <script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script> --}}
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#image-preview').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $('#image').on('change', function() {
+        previewImage(this);
+    });
 </script>
 @endpush

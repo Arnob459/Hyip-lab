@@ -25,7 +25,7 @@
                                                     <tr>
                                                         <td class="text-bold-500">{{ $level->id }}</td>
                                                         <td>Level# {{ $level->level }}</td>
-                                                        <td class="text-bold-500">{{number_format( $level->percent) }}%</td>
+                                                        <td class="text-bold-500">{{( $level->percent) }}%</td>
                                                     </tr>
                                                     @endforeach
 
@@ -82,9 +82,11 @@
                                         <label class="btn btn-outline-danger  "  for="inrn"> No</label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary  w-100">Submit</button>
+                                    </div>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-1 mb-1">Submit</button>
 
                                 </form>
                             </div>
@@ -107,7 +109,7 @@
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="col-md-12" id="commission_levels">
-                                                            <form action="{{ route('admin.levels.store') }}" method="post">
+                                                            <form action="{{ route('admin.levels.store') }}" method="post" >
                                                                 @csrf
                                                                 <table id="levelTable">
                                                                     <label class="text-success" id="referrals" style="display: none;"> Level & Commission </label>
@@ -121,8 +123,10 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary  w-100">Submit</button>
+                                        </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-1 mb-1">Submit</button>
                             </form>
                             </div>
                         </div>
@@ -133,7 +137,6 @@
 
 
 @push('ref')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
     $("#createLevels").click(function() {

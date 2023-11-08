@@ -26,7 +26,7 @@
                                     @foreach ($rewards as $reward)
 
                                     <tr>
-                                        <td>{{ $reward->id }}</td>
+                                        <td>{{$loop->iteration}}</td>
                                         <td>
                                             {{$reward->name ?? 'N/A'}}</td>
                                         <td>

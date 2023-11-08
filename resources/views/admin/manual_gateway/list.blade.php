@@ -13,8 +13,7 @@
                     <h4 class="card-title">@lang('Methods') </h4>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="basic-datatables" class="display table  table-hover">
+                    <table class="table table-hover " id="table1">
                             <thead>
                             <tr>
                                 <th>@lang('Sl')</th>
@@ -120,10 +119,14 @@
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 @endsection
+
+@push('datatable')
+<script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+<script src="{{ asset('assets/admin/js/pages/datatables.js') }}"></script>
+@endpush

@@ -34,7 +34,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Interest Wallet Balance </span>
+                                        <span class="title">Bonus Wallet Balance </span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -89,7 +89,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Total Interest return </span>
+                                        <span class="title">Total Bonus return </span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -103,7 +103,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Today Interest return </span>
+                                        <span class="title">Today Bonus return </span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -117,7 +117,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Yesterday Interest return</span>
+                                        <span class="title">Yesterday Bonus return</span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -131,7 +131,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Last 7 days Interest return </span>
+                                        <span class="title">Last 7 days Bonus return </span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -145,7 +145,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Last 30 days Interest return </span>
+                                        <span class="title">Last 30 days Bonus return </span>
                                         <h5 class="amount">0 USD</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -190,7 +190,7 @@
                     <div class="footer-bottom">
                         <div class="footer-bottom-area">
                             <div >
-                                <p> Copyright © 2020. All rights reserved</p>
+                                <p> {{ Copyright © 2020. All rights reserved }}</p>
                             </div>
                             <ul class="social-icons">
                                 <li>
@@ -205,7 +205,7 @@
                                 </li>
                                 <li>
                                     <a href="#0">
-                                        <i class="fab fa-pinterest-p"></i>
+                                        <i class="fab fa-pBonus-p"></i>
                                     </a>
                                 </li>
                                 <li>

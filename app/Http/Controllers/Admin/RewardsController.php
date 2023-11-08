@@ -32,7 +32,7 @@ class RewardsController extends Controller
         $request->validate([
             'name' => 'string|max:255',
             'time_limit' => 'required|in:1,0',
-            'hours' => $request->input('hours') == '1' ? 'required|integer|min:1' : '',
+            'hours' => $request->input('hours') == '1' ? 'required|integer|gt:0' : '',
             'image' => 'image|mimes:jpeg,png,jpg',
 
         ]);
@@ -48,7 +48,7 @@ class RewardsController extends Controller
                 $filename = upload_image($request->image, $path, $size);
             } catch (\Exception $exp) {
 
-                return back()->withWarning('Image could not be uploaded');
+                return back()->with('error','Image could not be uploaded');
             }
             $reward->image = $filename;
         }
@@ -66,8 +66,8 @@ class RewardsController extends Controller
 
             $request->validate([
                 'user.*' => 'required|integer|max:255',
-                'business.*' => 'required|numeric|min:1',
-                'amount.*' => 'required|numeric|min:1',
+                'business.*' => 'required|numeric|gt:0',
+                'amount.*' => 'required|numeric|gt:0',
 
             ]);
 
@@ -116,8 +116,8 @@ class RewardsController extends Controller
 
         $request->validate([
             'paid_user' => 'required|integer|max:255',
-            'business_value' => 'required|numeric|min:1',
-            'reward_amount' => 'required|numeric|min:1',
+            'business_value' => 'required|numeric|gt:0',
+            'reward_amount' => 'required|numeric|gt:0',
 
         ]);
 

@@ -35,12 +35,12 @@
 </div>
 <div class="container-fluid">
 
-    <div class="table-wrapper">
+    <div class="table-wrapper ">
         <table class="transaction-table">
             <thead>
                 <tr>
                     <th scope="col">@lang('Plan')</th>
-                    <th scope="col">@lang('Interest')</th>
+                    <th scope="col">@lang('Bonus')</th>
                     <th scope="col">@lang('Period')</th>
                     <th scope="col">@lang('Received')</th>
                     <th scope="col">@lang('Status')</th>

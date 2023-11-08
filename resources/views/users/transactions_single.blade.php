@@ -36,7 +36,7 @@
                         <p>{{formatter_money($log->charge)}} {{$gnl->cur}}</p>
                         <p>{{formatter_money($log->post_balance)}} {{$gnl->cur}}</p>
                         <p> @if ($log->type == 1) @lang('Deposit Wallet') @else
-                                @lang('Interest Wallet')
+                                @lang('Bonus Wallet')
                             @endif</p>
                         <p>{{$log->details}} </p>
                         <p>{{show_datetime($log->created_at)}} </p>

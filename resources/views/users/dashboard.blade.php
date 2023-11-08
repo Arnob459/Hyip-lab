@@ -32,7 +32,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Interest Wallet Balance </span>
+                                        <span class="title">Bonus Wallet Balance </span>
                                         <h5 class="amount">{{formatter_money(auth()->user()->interest_balance)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -87,7 +87,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Total Interest return </span>
+                                        <span class="title">Total Bonus return </span>
                                         <h5 class="amount">{{formatter_money($total_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -101,7 +101,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Today Interest return </span>
+                                        <span class="title">Today Bonus return </span>
                                         <h5 class="amount">{{formatter_money($today_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -115,7 +115,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Yesterday Interest return</span>
+                                        <span class="title">Yesterday Bonus return</span>
                                         <h5 class="amount">{{formatter_money($yesterday_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -129,7 +129,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Last 7 days Interest return </span>
+                                        <span class="title">Last 7 days Bonus return </span>
                                         <h5 class="amount">{{formatter_money($last_7_day_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">
@@ -143,7 +143,7 @@
                             <div class="dashboard-item">
                                 <div class="dashboard-inner">
                                     <div class="col-md-9">
-                                        <span class="title">Last 30 days Interest return </span>
+                                        <span class="title">Last 30 days Bonus return </span>
                                         <h5 class="amount">{{formatter_money($this_month_interest_return)}} {{$gnl->cur}}</h5>
                                     </div>
                                     <div class="col-md-3">

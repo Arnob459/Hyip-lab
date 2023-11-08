@@ -182,7 +182,7 @@
                             <a href="{{ route('admin.report.investment') }}">Investment Log </a>
                         </li>
                         <li class="submenu-item {{ Route::is('admin.report.interest') ? 'active' : '' }}">
-                            <a href="{{ route('admin.report.interest') }}">Interest History</a>
+                            <a href="{{ route('admin.report.interest') }}">Bonus History</a>
                         </li>
                         <li class="submenu-item {{ Route::is('admin.report.referral') ? 'active' : '' }}">
                             <a href="{{ route('admin.report.referral') }}">Referral Commissions</a>

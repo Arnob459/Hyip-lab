@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table  class="display table  table-hover" >
+                        <table  class="table  table-hover" >
                             <thead>
                             <tr>
                                 <th >@lang('Date')</th>
@@ -73,7 +73,9 @@
                             @endif
                             </tbody>
                         </table>
-                        {{ $deposits->links() }}
+                        <ul class="pagination-overfollow">
+                            <p>{{ $deposits->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+                        </ul>
                     </div>
 
                 </div>

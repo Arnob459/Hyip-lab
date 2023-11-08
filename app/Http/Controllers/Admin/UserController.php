@@ -26,13 +26,13 @@ class UserController extends Controller
     //
     public function Index(){
         $data['page_title'] = 'All Users';
-        $data['users'] = User::latest()->get();
+        $data['users'] = User::with('parent')->latest()->paginate(15);
         return view('admin.users.all_users',$data);
     }
 
     public function activeUsers(){
         $data['page_title'] = 'Active Users';
-        $data['users'] = User::where('email_verify', 1)->where('sms_verify', 1)->where('status', 1)->orderBy('id','desc')->get();
+        $data['users'] = User::with('parent')->where('email_verify', 1)->where('sms_verify', 1)->where('status', 1)->orderBy('id','desc')->paginate(15);
 
 
         return view('admin.users.all_users',$data);
@@ -40,7 +40,7 @@ class UserController extends Controller
 
     public function pendingUsers(){
         $data['page_title'] = 'Pending Users';
-        $data['users'] = User::where('status', 2)->latest()->get();
+        $data['users'] = User::with('parent')->where('status', 2)->latest()->paginate(15);
 
 
         return view('admin.users.all_users',$data);
@@ -48,7 +48,7 @@ class UserController extends Controller
 
     public function blockedUsers(){
         $data['page_title'] = 'Blocked Users';
-        $data['users'] = User::where('status', 0)->latest()->get();
+        $data['users'] = User::with('parent')->where('status', 0)->latest()->paginate(15);
 
 
         return view('admin.users.all_users',$data);
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     public function emailUnverifiedUsers(){
         $data['page_title'] = 'Email Unverified Users';
-        $data['users'] = User::where('email_verify', 0)->latest()->get();
+        $data['users'] = User::with('parent')->where('email_verify', 0)->latest()->paginate(15);
 
 
         return view('admin.users.all_users',$data);
@@ -64,7 +64,7 @@ class UserController extends Controller
 
     public function smsUnverifiedUsers(){
         $data['page_title'] = 'Sms Unverified Users';
-        $data['users'] = User::where('sms_verify', 0)->latest()->get();
+        $data['users'] = User::with('parent')->where('sms_verify', 0)->latest()->paginate(15);
 
 
         return view('admin.users.all_users',$data);

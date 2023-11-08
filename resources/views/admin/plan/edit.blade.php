@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="basicInput">Plan Name</label>
+                        <label for="basicInput" class="mb-2">Plan Name</label>
                         <input type="text" name="name" class="form-control form-control-lg" id="basicInput" value="{{ $plan->plan_name }}" required>
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                         <div class="col-md-6">
                             <label for="basicInput">Minimum Amount </label>
                             <div class="input-group mb-3">
-                                <input type="text" name="min_amount" class="form-control form-control-lg" value="{{formatter_money($plan->minimum_amount)  }}"
-                                    aria-label="min_amount" aria-describedby="basic-addon1" >
+                                <input type="text" name="minimum_amount" class="form-control form-control-lg" value="{{formatter_money($plan->minimum_amount)  }}"
+                                    aria-label="minimum_amount" aria-describedby="basic-addon1" >
                                 <span class="input-group-text" id="basic-addon1">{{ $gnl->cur_sym }}</span>
                             </div>
                         </div>
@@ -47,8 +47,8 @@
                         <div class="col-md-6">
                             <label for="basicInput">Maximum Amount </label>
                             <div class="input-group mb-3">
-                                <input type="text" name="max_amount" class="form-control form-control-lg" value="{{ formatter_money($plan->maximum_amount) }}"
-                                    aria-label="max_amount" aria-describedby="basic-addon1" >
+                                <input type="text" name="maximum_amount" class="form-control form-control-lg" value="{{ formatter_money($plan->maximum_amount) }}"
+                                    aria-label="maximum_amount" aria-describedby="basic-addon1" >
                                 <span class="input-group-text" id="basic-addon1">{{ $gnl->cur_sym }}</span>
                             </div>
                         </div>
@@ -70,8 +70,8 @@
                 <div class=" col-md-6">
                     <div class="form-group">
                         <label for="iconSelector">Time </label>
-                        <div class="col-sm-10">
-                            <select id="iconSelector" class="form-select " name="times" required>
+                        <div class="col-sm-12">
+                            <select id="iconSelector" class="form-select form-control-lg" name="times" required>
                             <option value="">Select Times</option>
                             <option value="Hourly"{{ $plan->times == 'Hourly' ? 'selected':'' }} >Hourly</option>
                             <option value="Daily"{{ $plan->times == 'Daily' ? 'selected':'' }} >Daily</option>
@@ -85,24 +85,20 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="basicInput"> Return /Interest </label>
+                    <label for="basicInput"> Return /Bonus </label>
                     <div class="input-group mb-3">
                         <input type="text" name="interest" class="form-control form-control-lg" value="{{ $plan->interest }}" required>
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <select name="interest_status">
+                                    <select class="input-group-text" name="interest_status">
                                         <option value="1"{{ $plan->interest_status == '1' ? 'selected':'' }} >%</option>
                                         <option value="0"{{ $plan->interest_status == '0' ? 'selected':'' }} >{{$gnl->cur_sym}}</option>
 
                                     </select>
-                                </div>
-                            </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label class="form-label">Return Interest</label>
+                        <label class="form-label">Return Bonus</label>
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="return_interest" id="lifetime"
                             autocomplete="off" value="1" {{ $plan->lifetime == '1' ? 'checked' : '' }}  onchange="show3()"  >
@@ -116,11 +112,12 @@
                 </div>
 
                 <div  id="3" class="col-md-4" style="display: {{ $plan->lifetime == '3' ? 'block' : 'none' }}">
-                            <label for="basicInput">Return Times </label>
+                    <div class="form-group">
+                            <label for="basicInput" class="mb-2">Return Times </label>
                             <div class="input-group mb-3">
                                 <input type="text" name="repeat_time" class="form-control form-control-lg" value="{{ $plan->repeat_time }}" >
-                                <span class="input-group-text" id="basic-addon1">{{ $gnl->cur_sym }}</span>
                             </div>
+                        </div>
                 </div>
 
 
@@ -142,7 +139,7 @@
                 </div>
 
 
-                <div class="col-md-4">
+                <div class="col-md-7">
                     <div class="form-group">
                         <label class="form-label">Status</label>
                         <div class="selectgroup w-100">
@@ -159,13 +156,16 @@
 
                 <div class="form-group col-md-6">
                     <label class="col-lg-6  ">Upload Image  <span class="required-label">*</span></label>
-                    <div class="form-group ">
-                        <img src="{{ asset('assets/images/plan/'.$plan->image) }}" alt="Image Preview" id="image-preview" style="height:40vh" >
-                    </div>
-                    <div class="col-lg-12 ">
+                    <div class="col-lg-12 mb-3">
+                        <div class="form-group input-file-image">
+                            <img  src="{{ asset('assets/images/plan/'.$plan->image) }}" alt="Image Preview" id="image-preview"  width="auto" height="auto"
+                            style="max-height: 350px;" >
+                        </div>
+
                         <div class="input-file input-file-image">
+
                             <input type="file" class="form-control " id="image" name="image" accept="image/*" hidden >
-                            <label for="image" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload</label>
+                            <label for="image" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload </label>
                         </div>
                     </div>
                     <p class="text-warning mb-0">Image Will Resize 512x512.</p>
@@ -181,7 +181,20 @@
         </div>
     </div>
 </section>
+<style>
+    .btn-outline-danger {
 
+    height: 45px;
+    width: 155px;
+    font-size: 16px;
+    }
+    .btn-outline-success {
+
+    height: 45px;
+    width: 155px;
+    font-size: 16px;
+    }
+  </style>
 @endsection
 
 @push('js')
