@@ -10,4 +10,8 @@ class Setting extends Model
     use HasFactory;
     protected $table = 'settings';
     protected $guarded = [];
+
+    protected $casts = [
+        'mail_config' => 'object',
+    ];
 }

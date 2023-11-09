@@ -272,6 +272,24 @@ Route::name('admin.')->group(function() {
 
           //End Home
 
+        // Email Setting
+        Route::get('email-template/global', [EmailTemplateController::class, 'emailTemplate'])->name('global-template');
+        Route::post('email-template/global', [EmailTemplateController::class, 'emailTemplateUpdate'])->name('email-template.global');
+        Route::get('email-template/setting', [EmailTemplateController::class, 'emailSetting'])->name('email-template-setting');
+        Route::post('email-template/setting', [EmailTemplateController::class, 'emailSettingUpdate'])->name('email-template.setting');
+        Route::get('email-template/index', [EmailTemplateController::class, 'index'])->name('email-template');
+        Route::get('email-template/{id}/edit', [EmailTemplateController::class, 'edit'])->name('email-template.edit');
+        Route::post('email-template/{id}/update', [EmailTemplateController::class, 'update'])->name('email-template.update');
+        Route::post('email-template/send-test-mail', [EmailTemplateController::class, 'sendTestMail'])->name('email-template.sendTestMail');
+
+        // SMS Setting
+        Route::get('sms-template/global', [SmsTemplateController::class, 'smsSetting'])->name('sms-template');
+        Route::post('sms-template/global', [SmsTemplateController::class, 'smsSettingUpdate'])->name('sms-template.global');
+        Route::get('sms-template/index', [SmsTemplateController::class, 'index'])->name('sms-template.index');
+        Route::get('sms-template/edit/{id}', [SmsTemplateController::class, 'edit'])->name('sms-template.edit');
+        Route::post('sms-template/update/{id}', [SmsTemplateController::class, 'update'])->name('sms-template.update');
+        Route::post('email-template/send-test-sms', [SmsTemplateController::class, 'sendTestSMS'])->name('email-template.sendTestSMS');
+
           //Language Manager
           Route::get('language', [LanguageController::class, 'Language'])->name('language');
           Route::post('language/create', [LanguageController::class, 'languageStore'])->name('language.store');
@@ -286,23 +304,6 @@ Route::name('admin.')->group(function() {
           Route::delete('/keyword/destroy/{id}', [LanguageController::class, 'destroyKeyword'])->name('keyword.destroy');
           Route::get('keyword/import/{id}', [LanguageController::class, 'keywordImport'])->name('keyword.import');
 
-
-
-
-
-
-          //SMS Manager
-          //Api
-          Route::get('sms-template/global', [SmsController::class, 'smsApi'])->name('sms.api');
-          Route::post('sms-template/global', [SmsController::class, 'smsApiUpdate'])->name('sms.api.update');
-
-          //Templete
-          Route::get('sms-template/index', [SmsController::class, 'smsTemplete'])->name('sms.templete');
-          Route::get('sms-template/edit/{id}', [SmsController::class, 'smsTempleteEdit'])->name('sms.templete.edit');
-          Route::post('sms-template/edit/{id}', [SmsController::class, 'smsTempleteUpdate'])->name('sms.templete.update');
-
-          //Test sms
-          Route::get('sms-template/test', [SmsController::class, 'smsTest'])->name('sms.test');
 
         //logout
         Route::get('/logout', [Auth\LoginController ::class, 'logout'])->name('logout');

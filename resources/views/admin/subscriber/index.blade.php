@@ -13,7 +13,7 @@
                         <div class="col-lg-12">
 
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover table-lg">
                                     <thead>
                                     <tr>
                                         <th scope="col">@lang('SL')</th>
@@ -34,6 +34,9 @@
                                     @endif
                                     </tbody>
                                 </table>
+                                <ul class="pagination-overfollow">
+                                    <p>{{ $subscribers->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
+                                </ul>
                             </div>
                         </div>
                     </div>
