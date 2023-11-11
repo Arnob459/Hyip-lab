@@ -295,20 +295,14 @@ Route::name('admin.')->group(function() {
         Route::post('sms-template/update/{id}', [SmsTemplateController::class, 'update'])->name('sms-template.update');
         Route::post('email-template/send-test-sms', [SmsTemplateController::class, 'sendTestSMS'])->name('email-template.sendTestSMS');
 
-          //Language Manager
-          Route::get('language', [LanguageController::class, 'Language'])->name('language');
-          Route::post('language/create', [LanguageController::class, 'languageStore'])->name('language.store');
-          Route::get('language/edit/{id}', [LanguageController::class, 'languageEdit'])->name('language.edit');
-          Route::put('language/update', [LanguageController::class, 'languageUpdate'])->name('language.update');
-          Route::delete('/language/destroy/{id}', [LanguageController::class, 'destroy'])->name('language.destroy');
 
-
-          Route::get('language/view/{id}', [LanguageController::class, 'keywordEdit'])->name('keyword.edit');
-          Route::put('language/view/update', [LanguageController::class, 'KeywordUpdate'])->name('keyword.update');
-          Route::post('language/keyword/create', [LanguageController::class, 'keywordStore'])->name('keyword.store');
-          Route::delete('/keyword/destroy/{id}', [LanguageController::class, 'destroyKeyword'])->name('keyword.destroy');
-          Route::get('keyword/import/{id}', [LanguageController::class, 'keywordImport'])->name('keyword.import');
-
+          Route::get('/language', [LanguageController::class, 'langManage'])->name('language-manage');
+          Route::post('/language', [LanguageController::class, 'langStore'])->name('language-manage-store');
+          Route::delete('/language/delete/{id}', [LanguageController::class, 'langDel'])->name('language-manage-del');
+          Route::post('/language/update/{id}', [LanguageController::class, 'langUpdatepp'])->name('language-manage-update');
+          Route::get('/language/view/{id}', [LanguageController::class, 'langEdit'])->name('language-key');
+          Route::put('/language/keyword-update/{id}', [LanguageController::class, 'langUpdate'])->name('language.key-update');
+          Route::post('/language/import', [LanguageController::class, 'langImport'])->name('language.import_lang');
 
         //logout
         Route::get('/logout', [Auth\LoginController ::class, 'logout'])->name('logout');

@@ -281,8 +281,8 @@
                     </ul>
                 </li>
                 <li
-                    class="sidebar-item {{ Route::is('admin.language') ? 'active' : '' }} ">
-                    <a href="{{ route('admin.language') }}" class="sidebar-link">
+                    class="sidebar-item {{ Route::is('admin.language-manage') ? 'active' : '' }} ">
+                    <a href="{{ route('admin.language-manage') }}" class="sidebar-link">
                         <i class="fas fa-language"></i>
                         <span>Language Manager </span>
                     </a>

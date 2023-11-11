@@ -2,6 +2,10 @@
 
 use App\Models\Setting;
 use App\Models\User;
+use App\Models\EmailTemplate;
+use App\Models\SmsTemplate;
+use App\Models\Plugin;
+
 
 
 function get_image($image, $clean = '')
@@ -153,7 +157,7 @@ function send_general_email($email, $subject, $message, $receiver_name = '')
 function send_email($user, $type, $shortcodes = [])
 {
     $general = Setting::first();
-    $email_template = \App\Models\EmailTemplate::where('act', $type)->where('email_status', 1)->first();
+    $email_template = EmailTemplate::where('act', $type)->where('email_status', 1)->first();
     if ($general->en != 1 || !$email_template) {
         return;
     }
@@ -269,7 +273,7 @@ function send_mailjet_mail($config, $receiver_email, $receiver_name, $sender_ema
 function send_sms($user, $type, $shortcodes = [])
 {
     $general = Setting::first(['sn', 'smsapi']);
-    $sms_template = \App\Models\SmsTemplate::where('act', $type)->where('sms_status', 1)->first();
+    $sms_template = SmsTemplate::where('act', $type)->where('sms_status', 1)->first();
     if ($general->sn == 1 && $sms_template) {
         $template = $sms_template->sms_body;
         foreach ($shortcodes as $code => $value) {
@@ -285,26 +289,26 @@ function send_sms($user, $type, $shortcodes = [])
 
 function recaptcha()
 {
-    $recaptcha = \App\Plugin::where('act', 'google-recaptcha3')->where('status', 1)->first();
+    $recaptcha = Plugin::where('act', 'google-recaptcha3')->where('status', 1)->first();
     return $recaptcha ? $recaptcha->generateScript() : '';
 }
 
 
 function googleAnalysis()
 {
-    $analytics = \App\Plugin::where('act', 'google-analytics')->where('status', 1)->first();
+    $analytics = Plugin::where('act', 'google-analytics')->where('status', 1)->first();
     return $analytics ? $analytics->generateScript() : '';
 }
 
 function twakchat()
 {
-    $tawkchat = \App\Plugin::where('act', 'tawk-chat')->where('status', 1)->first();
+    $tawkchat = Plugin::where('act', 'tawk-chat')->where('status', 1)->first();
     return $tawkchat ? $tawkchat->generateScript() : '';
 }
 
 function recaptcha_validate($response)
 {
-    $recaptcha = \App\Plugin::where('act', 'google-recaptcha3')->where('status', 1)->first();
+    $recaptcha = Plugin::where('act', 'google-recaptcha3')->where('status', 1)->first();
     if (!$recaptcha) return true;
     $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
     $secret_key = $recaptcha->shortcode->secretkey->value;
