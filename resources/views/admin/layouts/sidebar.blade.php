@@ -190,6 +190,14 @@
                     </ul>
                 </li>
 
+                <li
+                    class="sidebar-item {{ Route::is('admin.support.index') ? 'active' : '' }} ">
+                    <a href="{{ route('admin.support.index') }}" class="sidebar-link">
+                        <i class="fas fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-title">BASIC SETTINGS</li>
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>

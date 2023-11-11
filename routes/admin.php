@@ -129,6 +129,11 @@ Route::name('admin.')->group(function() {
         Route::get('report/interest', [ReportController::class, 'interest'])->name('report.interest');
         Route::get('report/investment', [ReportController::class, 'investment'])->name('report.investment');
 
+        //support ticket
+        Route::get('/supports', [SupportTicketController::class, 'indexSupport'])->name('support.index');
+        Route::get('/support/reply/{ticket}', [SupportTicketController::class, 'adminSupport'])->name('ticket.reply');
+        Route::post('/reply/{ticket}', [SupportTicketController::class, 'adminReply'])->name('store.reply');
+
         //Basic Settings
 
           //Basic

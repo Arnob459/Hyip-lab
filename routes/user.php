@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RefController;
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\Admin\SupportTicketController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -69,6 +70,14 @@ use Illuminate\Support\Facades\Route;
                 //Refferal
                 Route::get('/referral-statistic', [RefController::class, 'ref'])->name('ref');
                 Route::get('/referral-commission', [RefController::class, 'ref_com'])->name('ref_com');
+
+                //Support
+                Route::get('/support', [SupportTicketController::class, 'ticketIndex'])->name('support');
+                Route::get('/support/new', [SupportTicketController::class, 'ticketCreate'])->name('add.new.ticket');
+                Route::post('/store/ticket', [SupportTicketController::class, 'ticketStore'])->name('ticket.store');
+                Route::get('/ticket/close/{ticket}', [SupportTicketController::class, 'ticketClose'])->name('ticket.close');
+                Route::get('/support/reply/{ticket}', [SupportTicketController::class, 'ticketReply'])->name('ticket.customer.reply');
+                Route::post('/support/store/{ticket}', [SupportTicketController::class, 'ticketReplyStore'])->name('store.customer.reply');
 
                 //user profile
                 Route::get('/profile', [UserController::class, 'profile'])->name('profile');

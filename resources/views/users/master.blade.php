@@ -108,6 +108,9 @@
                         <li class="nav-item"><a class="nav-link {{ Route::is('user.profile') ? 'active' : '' }}" href="{{ route('user.profile') }}"><i class="fas fa-user"></i>Profile </a>
                         </li>
 
+                        <li class="nav-item"><a class="nav-link {{ Route::is('user.support') ? 'active' : '' }}" href="{{ route('user.support') }}"><i class="flaticon-sms"></i>Support </a>
+                        </li>
+
                         <li class="nav-item"><a class="nav-link " href="{{ route('user.logout') }}"><i class="flaticon-right-arrow"></i>Logout</a>
                         </li>
                     </ul>
