@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">All User Balance</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$balance}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($balance)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Total Deposit Amount</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$payments}} {{$gnl->cur}} </h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($payments)}} {{$gnl->cur}} </h6>
                                 </div>
                             </div>
                         </div>
@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Pending Deposit Amount</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$pending_payments}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($pending_payments)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -244,7 +244,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Reject Deposit Amount</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$reject_payments}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($reject_payments)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Total Withdrawal Amount  </h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$withdrawals}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($withdrawals)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Pending Withdrawal Amount</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$pending_withdrawals}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($pending_withdrawals)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -351,7 +351,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Reject Withdraws Amount</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$reject_withdrawals}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($reject_withdrawals)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +390,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Total Invest</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$total_invest}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($total_invest)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +407,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Today Invest</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$today_invest}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($today_invest)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -424,7 +424,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Yesterday Invest</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$yesterday_invest}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($yesterday_invest)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +441,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Last 7 days Invest</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$last_7_day_invest}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($last_7_day_invest)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Last 30 days Invest</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$this_month_invest}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($this_month_invest)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -481,7 +481,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Total Bonus Return</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$total_interest_return}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($total_interest_return)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -498,7 +498,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Today Bonus Return</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$today_interest_return}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($today_interest_return)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -515,7 +515,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Yesterday Bonus Return</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$yesterday_interest_return}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($yesterday_interest_return)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -532,7 +532,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Last 7 days Bonus Return</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$last_7_day_interest_return}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($last_7_day_interest_return)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -550,7 +550,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Last 30 days Bonus Return</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$this_month_interest_return}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($this_month_interest_return)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -568,7 +568,7 @@
                                 </div>
                                 <div class="col-md-9 ">
                                     <h6 class="text-muted font-semibold">Total Referral Commission Given</h6>
-                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{$ref_com}} {{$gnl->cur}}</h6>
+                                    <h6 class="font-extrabold mb-0">{{$gnl->cur_sym}} {{formatter_money($ref_com)}} {{$gnl->cur}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -576,6 +576,20 @@
                 </div>
 
             </div>
+
+
+            {{-- <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Profile Visit</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-profile-visit">{{ $today_invest }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
 
         </div>
 
@@ -585,3 +599,7 @@
 @endsection
 
 
+@push('js')
+<script src="{{ asset('assets/admin/extensions/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/pages/dashboard.js') }}"></script>
+@endpush

@@ -12,14 +12,14 @@
                       onsubmit="store(event)">
                     @csrf
                     <div class="card-body pt-5 pb-5">
-                        <div class="form-row justify-content-center">
+                        <div class="row justify-content-center">
                             <div class="form-group col-md-3">
                                 <label for="">@lang('Social Icon')*</label>
                                 <div class="btn-group d-block">
                                     <button type="button" class="btn btn-secondary iconpicker-component"><i
                                             class="{{$icon->icon}}"></i></button>
                                     <button type="button" class="icp icp-dd btn btn-secondary dropdown-toggle"
-                                            data-selected="fa-car" data-toggle="dropdown">
+                                            data-selected="fa-car" data-bs-toggle="dropdown">
                                     </button>
                                     <div class="dropdown-menu"></div>
                                     <span class="action-create"></span>

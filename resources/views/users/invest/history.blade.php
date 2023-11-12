@@ -73,6 +73,10 @@
 
             </tbody>
         </table>
+
+        <ul class="pagination-overfollow ">
+            <p>{{ $logs->links( "pagination::bootstrap-5")}}</p>
+        </ul>
     </div>
 </div>
 

@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/main/app-dark.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/admin/images/logo/' .$gnl->favicon)}}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/shared/iconly.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/fontawesome-5.15.4/css/all.min.css') }}">
+    @stack('css_link')
+
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/toastr/css/toastr.css') }}">
 
 </head>
-    {{-- @if(session()->has('toastr'))
-    {!! session('toastr') !!}
-    @endif --}}
+
 @include('admin.layouts.sidebar')
     <div id="main">
         <header class='mb-3'>
@@ -157,7 +157,6 @@
 
 
 @stack('datatable')
-
 @stack('js')
 @stack('reward')
 @stack('ref')

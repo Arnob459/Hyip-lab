@@ -179,7 +179,7 @@ class UserPlanController extends Controller
     public function invest_history()
     {
         $data['page_title'] = "Interest Log";
-        $data['logs'] = Invest::where('user_id', auth()->id())->latest()->paginate(15);
+        $data['logs'] = Invest::where('user_id', auth()->id())->latest()->paginate(5);
         return view('users.invest.history', $data);
 
     }

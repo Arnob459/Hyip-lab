@@ -54,6 +54,7 @@
                 @endforeach
                 </tbody>
         </table>
+
         <ul class="pagination-overfollow">
             <p>{{ $logs->appends(array_filter(Request::all()))->links( "pagination::bootstrap-5")}}</p>
         </ul>
