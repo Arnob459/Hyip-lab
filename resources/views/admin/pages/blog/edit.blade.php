@@ -34,14 +34,14 @@
                     <div class="row mb-2">
                         <div class="col-md-12 mb-3">
                             <div class="form-group ">
-                                <label for="basicInput">Enter Title</label>
+                                <label for="basicInput" class="mb-2">Enter Title</label>
                                 <input type="text" name="title" class="form-control form-control-lg" id="basicInput" value="{{ $blog->title }}" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="myNicEditor">Enter Description</label>
+                                <label for="myNicEditor" class="mb-2">Enter Description</label>
                                 <textarea type="text" cols="10" rows="10" class="form-control" id="myNicEditor"name="description" required >{{  $blog->description  }}</textarea>
                             </div>
 

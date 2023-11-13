@@ -16,7 +16,7 @@
 
 
                 <div class="form-group col-md-4">
-                    <label class="col-lg-6 ">About Image  <span class="required-label">*</span></label>
+                    <label class="col-lg-6 mb-2">About Image  <span class="required-label">*</span></label>
                     <div class="form-group ">
                         <img src="{{ asset('assets/images/about/'.$about->about_image) }}" alt="Image Preview" id="image-preview" style="height:200px" >
                     </div>
@@ -36,14 +36,14 @@
 
                     <div class="col-md-12 mb-2">
                         <div class="form-group">
-                            <label for="basicInput">Enter Title</label>
+                            <label for="basicInput" class="mb-2">Enter Title</label>
                             <input type="text" name="about_title" class="form-control form-control-lg" id="basicInput" value="{{ $about->about_title }}"  required>
                         </div>
                     </div>
 
                     <div class="col-md-12 mb-2">
                         <div class="form-group">
-                            <label for="myNicEditor">Description</label>
+                            <label for="myNicEditor" class="mb-2">Description</label>
                             <textarea type="text" cols="10" rows="10" class="form-control" id="myNicEditor" name="about_description" required >{{  $about->about_des  }}</textarea>
                         </div>
                     </div>

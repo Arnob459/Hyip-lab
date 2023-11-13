@@ -18,14 +18,14 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Terms & Conditions Title<span class="required-label">*</span></label>
+                                <label for="basicInput" class="mb-2">Terms & Conditions Title<span class="required-label">*</span></label>
                                 <input type="text" name="terms_title" class="form-control form-control-lg" value="{{ $terms->title }}" id="basicInput" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="myNicEditor">Terms & Conditions Description<span class="required-label">*</span></label>
+                                <label for="myNicEditor" class="mb-2">Terms & Conditions Description<span class="required-label">*</span></label>
                                 <textarea type="text" cols="20" rows="20" class="form-control" id="myNicEditor" name="terms_description"  required >{{ $terms->sub_title }}</textarea>
                             </div>
                         </div>

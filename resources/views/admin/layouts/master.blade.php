@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/admin/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/main/app-dark.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/admin/images/logo/' .$gnl->favicon)}}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/' .$gnl->favicon)}}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/fontawesome-5.15.4/css/all.min.css') }}">
     @stack('css_link')
@@ -55,7 +55,7 @@
                                 <li><a class="dropdown-item" href="{{  route('admin.profile') }}"><i class="icon-mid bi bi-person me-2"></i> My
                                         Profile</a></li>
                                 <li><a class="dropdown-item" href="{{  route('admin.password') }}"><i class="icon-mid bi bi-gear me-2"></i>
-                                        Settings</a></li>
+                                        Change Password</a></li>
 
                                     <hr class="dropdown-divider">
                                 </li>

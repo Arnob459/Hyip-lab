@@ -10,18 +10,18 @@
                 </div>
                 <form  class="exampleValidation" action="{{route('admin.settings.contact')}}" method="post">
                     @csrf
-                    <div class="card-body pb-5 ">
-                        <div class="form-row ">
-                            <div class="form-group col-md-12">
-                                <label for="">@lang('Contact email') </label>
-                                <input type="text" class="form-control" name="contact_email" value="{{$setting_extra->contact_email}}"
+                    <div class="card-body ">
+                        <div class="row ">
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="" class="mb-2">@lang('Contact email') </label>
+                                <input type="text" class="form-control form-control-lg" name="contact_email" value="{{$setting_extra->contact_email}}"
                                        placeholder="Enter service title">
                                 <code>@lang('this email will use in contact form')</code>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <label for="">@lang('Contact phone')</label>
-                                <input type="text" class="form-control" name="contact_phone" value="{{$setting_extra->contact_phone}}"
+                                <label for="" class="mb-2">@lang('Contact phone')</label>
+                                <input type="text" class="form-control form-control-lg" name="contact_phone" value="{{$setting_extra->contact_phone}}"
                                        placeholder="Enter service subtitle">
                                 <code>@lang('this phone will use in header top')</code>
                             </div>

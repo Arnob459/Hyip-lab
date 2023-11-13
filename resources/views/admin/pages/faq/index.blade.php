@@ -19,14 +19,14 @@
 
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="basicInput"> Title</label>
+                        <label for="basicInput" class="mb-2"> Title</label>
                         <input type="text" name="faq_title" class="form-control form-control-lg" id="basicInput" value="{{ $faq->title }}"  required>
                     </div>
                 </div>
 
                 <div class="col-md-8">
                     <div class="form-group">
-                        <label for="basicInput"> Subtitle</label>
+                        <label for="basicInput" class="mb-2"> Subtitle</label>
                         <input type="text" name="faq_subtitle" class="form-control form-control-lg" id="basicInput" value="{{ $faq->sub_title }}"  required>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="card-body">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-lg">
+                        <table class="table table-lg ">
                             <thead>
                                 <tr>
                                     <th>SL</th>

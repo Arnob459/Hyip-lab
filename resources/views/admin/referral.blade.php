@@ -49,11 +49,11 @@
                                         <div class="selectgroup w-100">
                                             <input type="radio" class="btn-check " name="deposit_com" id="dpy"
                                             autocomplete="off" value="1" {{ $info->com_when_deposit == '1' ? 'checked' : '' }}  >
-                                        <label class="btn btn-outline-success  " for="dpy">Yes</label>
+                                        <label class="btn btn-outline-success-custom  " for="dpy">Yes</label>
 
                                         <input type="radio" class="btn-check" name="deposit_com" id="dpn"
                                             autocomplete="off" value="0" {{ $info->com_when_deposit == '0' ? 'checked' : '' }} >
-                                        <label class="btn btn-outline-danger  "  for="dpn"> No</label>
+                                        <label class="btn btn-outline-danger-custom  "  for="dpn"> No</label>
                                         </div>
                                     </div>
 
@@ -62,11 +62,11 @@
                                         <div class="selectgroup w-100">
                                             <input type="radio" class="btn-check " name="invest_com" id="iny"
                                             autocomplete="off" value="1" {{ $info->give_com_when_invest == '1' ? 'checked' : '' }}  >
-                                        <label class="btn btn-outline-success  " for="iny">Yes</label>
+                                        <label class="btn btn-outline-success-custom  " for="iny">Yes</label>
 
                                         <input type="radio" class="btn-check" name="invest_com" id="inn"
                                             autocomplete="off" value="0" {{ $info->give_com_when_invest == '0' ? 'checked' : '' }} >
-                                        <label class="btn btn-outline-danger  "  for="inn"> No</label>
+                                        <label class="btn btn-outline-danger-custom  "  for="inn"> No</label>
                                         </div>
                                     </div>
 
@@ -75,11 +75,11 @@
                                         <div class="selectgroup w-100">
                                             <input type="radio" class="btn-check " name="invest_return_com" id="inry"
                                             autocomplete="off" value="1" {{ $info->give_com_when_invest_return == '1' ? 'checked' : '' }}  >
-                                        <label class="btn btn-outline-success  " for="inry">Yes</label>
+                                        <label class="btn btn-outline-success-custom  " for="inry">Yes</label>
 
                                         <input type="radio" class="btn-check" name="invest_return_com" id="inrn"
                                             autocomplete="off" value="0" {{ $info->give_com_when_invest_return == '0' ? 'checked' : '' }} >
-                                        <label class="btn btn-outline-danger  "  for="inrn"> No</label>
+                                        <label class="btn btn-outline-danger-custom  "  for="inrn"> No</label>
                                         </div>
                                     </div>
                                     <div class="form-group">

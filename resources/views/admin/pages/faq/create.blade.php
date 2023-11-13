@@ -16,14 +16,14 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Question</label>
+                                <label for="basicInput" class="mb-2">Question</label>
                                 <input type="text" name="qus" class="form-control form-control-lg" id="basicInput"  required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Answer</label>
+                                <label for="basicInput" class="mb-2">Answer</label>
                                 <textarea type="text" cols="5" rows="5" class="form-control" id="basicInput" name="ans" required ></textarea>
                             </div>
                         </div>

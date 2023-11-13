@@ -11,7 +11,7 @@
                             <form class="form form-vertical">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-12 text-center mb-5 ">
+                                        <div class="col-12 text-center mb-4 mt-4 ">
                                             <div class="avatar avatar-xl me-3 mb-3  ">
                                                 @if ($user->avatar == null)
                                                 <span
@@ -26,7 +26,6 @@
 
                                         <div class="col-12 ">
 
-                                            <h3 class=""> User info: </h3>
                                             <div class="row mb-3">
                                                 <div div class="col-md-6 ">
                                                     <div class=" text-nowrap mb-1">Name: </div>
@@ -260,13 +259,11 @@
                                 <div class="col-md-6">
                                     <button type="button"  class="btn btn-success btn-block me-1 mb-3" data-bs-toggle="modal"
                                         data-bs-target="#addModal" >Add Balance</button>
-                                    {{-- <a href=""   class="btn btn-success btn-block me-1 mb-3">Add Balance</a> --}}
 
                                 </div>
                                 <div class="col-md-6">
                                     <button type="button"  class="btn btn-danger btn-block me-1 mb-3" data-bs-toggle="modal"
                                         data-bs-target="#subModal" >Subtract Balance</button>
-                                    {{-- <a href=""   class="btn btn-success btn-block me-1 mb-3">Add Balance</a> --}}
 
                                 </div>
 
@@ -312,14 +309,14 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="first-name-vertical"> Name</label>
+                                                <label for="first-name-vertical" class="mb-2"> Name</label>
                                                 <input type="text" id="first-name-vertical" class="form-control"
                                                 name="name" value="{{ $user->name }}" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="email-id-vertical">Username</label>
+                                                <label for="email-id-vertical" class="mb-2">Username</label>
                                                 <input type="text" id="email-id-vertical" class="form-control"
                                                 name="username" value="{{ $user->username }}" required>
                                             </div>
@@ -327,7 +324,7 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Mobile</label>
+                                                <label for="contact-info-vertical" class="mb-2">Mobile</label>
                                                 <input type="number" id="contact-info-vertical" class="form-control"
                                                 name="phone" value="{{ $user->phone }}" required>
                                             </div>
@@ -335,7 +332,7 @@
 
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="email-id-vertical">Email</label>
+                                                <label for="email-id-vertical" class="mb-2">Email</label>
                                                 <input type="email" id="email-id-vertical" class="form-control"
                                                 name="email" value="{{ $user->email }}" required >
                                             </div>
@@ -343,7 +340,7 @@
 
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Address</label>
+                                                <label for="contact-info-vertical" class="mb-2">Address</label>
                                                 <input type="text" id="contact-info-vertical" class="form-control"
                                                 name="address" value="{{ @$user->address->address }}" >
                                             </div>
@@ -351,7 +348,7 @@
 
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Country</label>
+                                                <label for="contact-info-vertical" class="mb-2">Country</label>
                                                 <select class="form-control" name="country">
                                                     @include('partials.country')
                                                 </select>
@@ -360,7 +357,7 @@
 
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">State</label>
+                                                <label for="contact-info-vertical" class="mb-2">State</label>
                                                 <input type="text" id="contact-info-vertical" class="form-control"
                                                 name="state" value="{{ @$user->address->state }}" >
                                             </div>
@@ -368,7 +365,7 @@
 
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">City</label>
+                                                <label for="contact-info-vertical" class="mb-2">City</label>
                                                 <input type="text" id="contact-info-vertical" class="form-control"
                                                 name="city" value="{{ @$user->address->city }}" >
                                             </div>
@@ -376,7 +373,7 @@
 
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Zip/Postal</label>
+                                                <label for="contact-info-vertical" class="mb-2">Zip/Postal</label>
                                                 <input type="text" id="contact-info-vertical" class="form-control"
                                                 name="zip" value="{{ @$user->address->zip }}" >
                                             </div>
@@ -388,11 +385,11 @@
                                                 <div class="selectgroup w-100">
                                                     <input type="radio" class="btn-check " name="email_verify" id="success-outlined"
                                                     autocomplete="off" value="1" {{ $user->email_verify == '1' ? 'checked' : '' }}>
-                                                    <label class="btn btn-outline-success btn-block " for="success-outlined">Verified</label>
+                                                    <label class="btn btn-outline-success  " for="success-outlined">Verified</label>
 
                                                 <input type="radio" class="btn-check" name="email_verify" id="danger-outlined"
                                                     autocomplete="off" value="0" {{ $user->email_verify != '1' ? 'checked' : '' }}  >
-                                                <label class="btn btn-outline-danger btn-block "  for="danger-outlined"> Unverified</label>
+                                                <label class="btn btn-outline-danger  "  for="danger-outlined"> Unverified</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -403,11 +400,11 @@
                                                 <div class="selectgroup w-100 ">
                                                     <input type="radio" class="btn-check " name="sms_verify" id="sms-verify-true"
                                                     autocomplete="off" value="1" {{ $user->sms_verify == '1' ? 'checked' : '' }} >
-                                                        <label class="btn btn-outline-success btn-block  " for="sms-verify-true">Verified</label>
+                                                        <label class="btn btn-outline-success   " for="sms-verify-true">Verified</label>
 
                                                 <input type="radio" class="btn-check" name="sms_verify" id="sms-verify-false"
                                                     autocomplete="off" value="0" {{ $user->sms_verify != '1' ? 'checked' : '' }} >
-                                                <label class="btn btn-outline-danger btn-block  "  for="sms-verify-false"> Unverified</label>
+                                                <label class="btn btn-outline-danger  "  for="sms-verify-false"> Unverified</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -418,11 +415,11 @@
                                                 <div class="selectgroup w-100">
                                                     <input type="radio" class="btn-check " name="two_fa_status" id="on"
                                                     autocomplete="off" value="1" {{ $user->ts == '1' ? 'checked' : '' }}  >
-                                                <label class="btn btn-outline-success btn-block " for="on">On</label>
+                                                <label class="btn btn-outline-success" for="on">On</label>
 
                                                 <input type="radio" class="btn-check" name="two_fa_status" id="off"
                                                     autocomplete="off" value="0" {{ $user->ts != '1' ? 'checked' : '' }} >
-                                                <label class="btn btn-outline-danger btn-block "  for="off"> Off</label>
+                                                <label class="btn btn-outline-danger "  for="off"> Off</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -433,18 +430,18 @@
                                                 <div class="selectgroup w-100">
                                                     <input type="radio" class="btn-check " name="two_fa_verify" id="2fa-verification-on"
                                                     autocomplete="off" value="1"  @if($user->tv == 1)    checked=""  @endif  >
-                                                <label class="btn btn-outline-success btn-block " for="2fa-verification-on">Verified</label>
+                                                <label class="btn btn-outline-success " for="2fa-verification-on">Verified</label>
 
                                                 <input type="radio" class="btn-check" name="two_fa_verify" id="2fa-verification-off"
                                                     autocomplete="off" value="0" @if($user->tv != 1)    checked=""  @endif >
-                                                <label class="btn btn-outline-danger btn-block "  for="2fa-verification-off"> Unverified</label>
+                                                <label class="btn btn-outline-danger"  for="2fa-verification-off"> Unverified</label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Status</label>
+                                                <label for="contact-info-vertical"  class="mb-2">Status</label>
                                                 <select name="status"  class="form-select" >
                                                     <option value="1"@if ($user->status == '1') selected @endif>Active</option>
                                                     <option value="0"@if ($user->status == '0') selected @endif>Block</option>
@@ -559,7 +556,18 @@
             background-color: #5398c9; /* Change this to your desired color */
             color: white; /* Change text color to contrast with the background */
         }
+        .btn-outline-danger {
+
+            height: 40px;
+            width: 140px;
+            }
+        .btn-outline-success {
+
+            height: 40px;
+            width: 140px;
+            }
     </style>
+
 @endsection
 
 @push('js')

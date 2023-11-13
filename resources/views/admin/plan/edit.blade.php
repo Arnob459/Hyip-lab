@@ -25,18 +25,18 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="amount_type" id="success-outlined"
                             autocomplete="off"  value="1" {{ $plan->amount_type == '1' ? 'checked' : '' }} onchange="show()" >
-                        <label class="btn btn-outline-success " for="success-outlined">Range</label>
+                        <label class="btn btn-outline-success-custom " for="success-outlined">Range</label>
 
                         <input type="radio" class="btn-check" name="amount_type" id="danger-outlined"
                             autocomplete="off"  value="2" {{ $plan->amount_type == '2' ? 'checked' : '' }} onchange="show2()">
-                        <label class="btn btn-outline-danger " for="danger-outlined"> Fixed</label>
+                        <label class="btn btn-outline-danger-custom " for="danger-outlined"> Fixed</label>
                         </div>
                     </div>
                 </div>
                 <div  id="1" style="display: {{ $plan->amount_type == '1' ? 'block' : 'none' }}">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="basicInput">Minimum Amount </label>
+                            <label for="basicInput" class="mb-2">Minimum Amount </label>
                             <div class="input-group mb-3">
                                 <input type="text" name="minimum_amount" class="form-control form-control-lg" value="{{formatter_money($plan->minimum_amount)  }}"
                                     aria-label="minimum_amount" aria-describedby="basic-addon1" >
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="basicInput">Maximum Amount </label>
+                            <label for="basicInput" class="mb-2">Maximum Amount </label>
                             <div class="input-group mb-3">
                                 <input type="text" name="maximum_amount" class="form-control form-control-lg" value="{{ formatter_money($plan->maximum_amount) }}"
                                     aria-label="maximum_amount" aria-describedby="basic-addon1" >
@@ -58,7 +58,7 @@
 
                 <div class="row" id="2" style="display: {{ $plan->amount_type == '2' ? 'block' : 'none' }}">
                     <div class="col-md-6" >
-                        <label for="basicInput">Fixed Amount </label>
+                        <label for="basicInput" class="mb-2">Fixed Amount </label>
                         <div class="input-group mb-3" >
                             <input type="text"  name="fixed_amount" class="form-control form-control-lg" value="{{formatter_money($plan->fixed_amount)  }}"
                                 aria-label="Username" aria-describedby="basic-addon1">
@@ -69,7 +69,7 @@
 
                 <div class=" col-md-6">
                     <div class="form-group">
-                        <label for="iconSelector">Time </label>
+                        <label for="iconSelector" class="mb-2">Time </label>
                         <div class="col-sm-12">
                             <select id="iconSelector" class="form-select form-control-lg" name="times" required>
                             <option value="">Select Times</option>
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="basicInput"> Return /Bonus </label>
+                    <label for="basicInput" class="mb-2"> Return /Bonus </label>
                     <div class="input-group mb-3">
                         <input type="text" name="interest" class="form-control form-control-lg" value="{{ $plan->interest }}" required>
                                     <select class="input-group-text" name="interest_status">
@@ -102,11 +102,11 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="return_interest" id="lifetime"
                             autocomplete="off" value="1" {{ $plan->lifetime == '1' ? 'checked' : '' }}  onchange="show3()"  >
-                        <label class="btn btn-outline-success  " for="lifetime">Lifetime</label>
+                        <label class="btn btn-outline-success-custom  " for="lifetime">Lifetime</label>
 
                         <input type="radio" class="btn-check" name="return_interest" id="timewise"
                             autocomplete="off" value="3" {{ $plan->lifetime == '3' ? 'checked' : '' }} onchange="show4()" >
-                        <label class="btn btn-outline-danger  "  for="timewise"> Timewise</label>
+                        <label class="btn btn-outline-danger-custom  "  for="timewise"> Timewise</label>
                         </div>
                     </div>
                 </div>
@@ -129,11 +129,11 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="capital_back" id="yes"
                             autocomplete="off" value="1" {{ $plan->capital_back == '1' ? 'checked' : '' }} >
-                        <label class="btn btn-outline-success  " for="yes">Yes</label>
+                        <label class="btn btn-outline-success-custom  " for="yes">Yes</label>
 
                         <input type="radio" class="btn-check" name="capital_back" id="store"
                             autocomplete="off" value="0" {{ $plan->capital_back == '0' ? 'checked' : '' }} >
-                        <label class="btn btn-outline-danger  "  for="store"> Store</label>
+                        <label class="btn btn-outline-danger-custom  "  for="store"> Store</label>
                         </div>
                     </div>
                 </div>
@@ -145,11 +145,11 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check" name="status" id="active"
                             autocomplete="off" value="1" {{ $plan->status == '1' ? 'checked' : '' }}  >
-                        <label class="btn btn-outline-success " for="active">Active</label>
+                        <label class="btn btn-outline-success-custom " for="active">Active</label>
 
                         <input type="radio" class="btn-check" name="status" id="deactive"
                             autocomplete="off" value="0" {{ $plan->status == '0' ? 'checked' : '' }}  >
-                        <label class="btn btn-outline-danger " for="deactive"> Deactivate</label>
+                        <label class="btn btn-outline-danger-custom " for="deactive"> Deactivate</label>
                         </div>
                     </div>
                 </div>
@@ -181,20 +181,7 @@
         </div>
     </div>
 </section>
-<style>
-    .btn-outline-danger {
 
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-    .btn-outline-success {
-
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-  </style>
 @endsection
 
 @push('js')

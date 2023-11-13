@@ -73,7 +73,7 @@ class UserController extends Controller
     public function userEdit($id){
 
         $data['user'] = User::findOrfail($id);
-        $data['page_title'] = 'User:' .$data['user']->username;
+        $data['page_title'] = 'USER: ' .$data['user']->username;
         $data['ref'] = User::find( $data['user']->refferal);
         $data['total_invest'] = Invest::where('user_id', $id)->sum('amount');
         $data['total_deposit'] = Deposit::where('user_id', $id)->where('status', 1)->sum('amount');

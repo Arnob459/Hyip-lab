@@ -27,11 +27,11 @@
                             <div class="selectgroup w-100">
                                 <input type="radio" class="btn-check " name="time_limit" id="success-outlined"
                                 autocomplete="off"  value="1" {{ $reward->hours != '0' ? 'checked' : '' }} onchange="show()" >
-                            <label class="btn btn-outline-success " for="success-outlined">In hours</label>
+                            <label class="btn btn-outline-success-custom " for="success-outlined">In hours</label>
 
                             <input type="radio" class="btn-check" name="time_limit" id="danger-outlined"
                                 autocomplete="off"  value="0" {{ $reward->hours == '0' ? 'checked' : '' }} onchange="show2()">
-                            <label class="btn btn-outline-danger " for="danger-outlined"> Lifetime</label>
+                            <label class="btn btn-outline-danger-custom " for="danger-outlined"> Lifetime</label>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="iconSelector">Status</label>
+                            <label for="iconSelector" class="mb-2">Status</label>
                             <select name="status"  class="form-select form-control-lg" >
                                 <option value="1"@if ($reward->status == '1') selected @endif>Active</option>
                                 <option value="0"@if ($reward->status == '0') selected @endif>Deactivate</option>
@@ -170,20 +170,7 @@
     </div>
 
 </section>
-<style>
-    .btn-outline-danger {
 
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-    .btn-outline-success {
-
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-  </style>
 @endsection
 
 @push('reward')

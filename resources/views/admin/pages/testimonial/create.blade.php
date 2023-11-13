@@ -37,21 +37,21 @@
                     <div class="row mb-2">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Enter Author Name</label>
+                                <label for="basicInput" class="mb-2">Enter Author Name</label>
                                 <input type="text" name="name" class="form-control form-control-lg" id="basicInput" placeholder="Enter Author" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Designation</label>
+                                <label for="basicInput" class="mb-2">Designation</label>
                                 <input type="text" name="designation" class="form-control form-control-lg" id="basicInput" placeholder="Enter Designation" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Quote</label>
+                                <label for="basicInput" class="mb-2">Quote</label>
                                 <textarea type="text" cols="5" rows="5" class="form-control" id="basicInput" name="quote" required ></textarea>
                             </div>
                         </div>

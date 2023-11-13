@@ -3,7 +3,7 @@
 @section('content')
 
 @push('button')
-<a href="{{ route('admin.services.create') }}" class="btn btn-warning ">Add New</a>
+<a href="{{ route('admin.services.create') }}" class="btn btn-lg btn-warning ">Add New</a>
 @endpush
 
 <section class="section">
@@ -20,14 +20,14 @@
 
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="basicInput"> Title</label>
+                        <label for="basicInput" class="mb-2"> Title</label>
                         <input type="text" name="service_title" class="form-control form-control-lg" id="basicInput" value="{{ $service->title }}"  required>
                     </div>
                 </div>
 
                 <div class="col-md-8">
                     <div class="form-group">
-                        <label for="basicInput"> Subtitle</label>
+                        <label for="basicInput" class="mb-2"> Subtitle</label>
                         <input type="text" name="service_subtitle" class="form-control form-control-lg" id="basicInput" value="{{ $service->sub_title }}"  required>
                     </div>
                 </div>

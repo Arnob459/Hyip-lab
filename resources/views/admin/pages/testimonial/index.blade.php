@@ -20,14 +20,14 @@
 
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label for="basicInput"> Title</label>
+                        <label for="basicInput" class="mb-2"> Title</label>
                         <input type="text" name="testimonial_title" class="form-control form-control-lg" id="basicInput" value="{{ $testimonial->title }}"  required>
                     </div>
                 </div>
 
                 <div class="col-md-8">
                     <div class="form-group">
-                        <label for="basicInput"> Subtitle</label>
+                        <label for="basicInput" class="mb-2"> Subtitle</label>
                         <input type="text" name="testimonial_subtitle" class="form-control form-control-lg" id="basicInput" value="{{ $testimonial->sub_title }}"  required>
                     </div>
                 </div>

@@ -131,8 +131,7 @@ class AdminController extends Controller
         ]);
         $user = Auth::guard('admin')->user();
         if (!Hash::check($request->old_password, $user->password)) {
-            // return back()->withErrors(['Password Do not match !!']);
-            return back()->with('error', 'Password Do not match !!');
+            return back()->withErrors(['Password Do not match !!']);
         }
 
         $user->update([

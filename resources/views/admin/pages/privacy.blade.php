@@ -18,14 +18,14 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">privacy & policy Title<span class="required-label">*</span></label>
+                                <label for="basicInput" class="mb-2">privacy & policy Title<span class="required-label">*</span></label>
                                 <input type="text" name="privacy_title" class="form-control form-control-lg" value="{{ $privacy->title }}" id="basicInput" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="myNicEditor">privacy & policy Description<span class="required-label">*</span></label>
+                                <label for="myNicEditor" class="mb-2">privacy & policy Description<span class="required-label">*</span></label>
                                 <textarea type="text" cols="20" rows="20" class="form-control" id="myNicEditor" name="privacy_description" >{{ $privacy->sub_title }}</textarea>
                             </div>
                         </div>

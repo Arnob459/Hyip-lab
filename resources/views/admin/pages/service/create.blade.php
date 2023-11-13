@@ -15,7 +15,7 @@
                 @csrf
             <div class="row">
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="col-lg-6 mb-2 ">Upload icon  <span class="required-label">*</span></label>
 
                     <div class="form-group ">
@@ -34,18 +34,18 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="row mb-2">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Enter Title</label>
+                                <label for="basicInput" class="mb-2">Enter Title</label>
                                 <input type="text" name="title" class="form-control form-control-lg" id="basicInput" placeholder="Enter Title" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Enter Short Text</label>
+                                <label for="basicInput" class="mb-2">Enter Short Text</label>
                                 <input type="text" name="subtitle" class="form-control form-control-lg" id="basicInput" placeholder="Enter Short Text" required>
                             </div>
                         </div>

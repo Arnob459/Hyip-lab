@@ -34,21 +34,21 @@
                     <div class="row mb-2">
                         <div class="col-md-12 mb-3">
                             <div class="form-group ">
-                                <label for="basicInput"> Author Name</label>
+                                <label for="basicInput" class="mb-2"> Author Name</label>
                                 <input type="text" name="name" class="form-control form-control-lg" id="basicInput" value="{{ $testimonial->author }}" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput"> Designation </label>
+                                <label for="basicInput" class="mb-2"> Designation </label>
                                 <input type="text" name="designation" class="form-control form-control-lg" id="basicInput" value="{{ $testimonial->designation }}" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Quote</label>
+                                <label for="basicInput" class="mb-2">Quote</label>
                                 <textarea type="text" cols="5" rows="5" class="form-control" id="basicInput" name="quote" required >{{ $testimonial->quote }}</textarea>
                             </div>
                         </div>

@@ -14,7 +14,7 @@
                 @csrf
             <div class="row">
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="col-lg-6 mb-2 ">Upload Slider  <span class="required-label">*</span></label>
                     <div class="col-lg-12 mb-3">
                         <div class="form-group ">
@@ -31,18 +31,18 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="row mb-2">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Enter Title</label>
+                                <label for="basicInput" class="mb-2">Enter Title</label>
                                 <input type="text" name="title" class="form-control form-control-lg" id="basicInput" placeholder="Enter Title" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="basicInput">Enter Subtitle</label>
+                                <label for="basicInput" class="mb-2">Enter Subtitle</label>
                                 <input type="text" name="subtitle" class="form-control form-control-lg" id="basicInput" placeholder="Enter Subtitle" required>
                             </div>
                         </div>
@@ -58,7 +58,12 @@
         </div>
     </div>
 </section>
-<script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script>
+
+
+@endsection
+
+
+@push('js')
 <script>
     function previewImage(input) {
         if (input.files && input.files[0]) {
@@ -76,6 +81,4 @@
         previewImage(this);
     });
 </script>
-@endsection
-
-
+@endpush

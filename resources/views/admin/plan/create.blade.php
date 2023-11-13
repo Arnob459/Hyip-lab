@@ -26,18 +26,18 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn btn-check  " name="amount_type" id="success-outlined"
                             autocomplete="off" value="1" onchange="show()" checked >
-                        <label class="btn btn-outline-success " for="success-outlined">Range</label>
+                        <label class="btn btn-outline-success-custom " for="success-outlined">Range</label>
 
                         <input type="radio" class="btn-check" name="amount_type" id="danger-outlined"
                             autocomplete="off" value="2"  onchange="show2()" >
-                        <label class="btn btn-outline-danger "  for="danger-outlined"> Fixed</label>
+                        <label class="btn btn-outline-danger-custom "  for="danger-outlined"> Fixed</label>
                         </div>
                     </div>
                 </div>
                 <div  id="1">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="basicInput">Minimum Amount </label>
+                            <label for="basicInput" class="mb-2">Minimum Amount </label>
                             <div class="input-group mb-3">
                                 <input type="text" name="minimum_amount" class="form-control form-control-lg" placeholder="Minimum Amount"
                                     aria-label="minimum_amount" aria-describedby="basic-addon1" >
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="basicInput">Maximum Amount </label>
+                            <label for="basicInput" class="mb-2">Maximum Amount </label>
                             <div class="input-group mb-3">
                                 <input type="text" name="maximum_amount" class="form-control form-control-lg" placeholder="Maximum Amount"
                                     aria-label="maximum_amount" aria-describedby="basic-addon1" >
@@ -59,7 +59,7 @@
 
                 <div class="row" id="2" style="display:none;">
                     <div class="col-md-6" >
-                        <label for="basicInput">Fixed Amount </label>
+                        <label for="basicInput" class="mb-2">Fixed Amount </label>
                         <div class="input-group mb-3" >
                             <input type="text"  name="fixed_amount" class="form-control form-control-lg" placeholder="Fixed Amount"
                                 aria-label="Username" aria-describedby="basic-addon1">
@@ -70,7 +70,7 @@
 
                 <div class=" col-md-6">
                     <div class="form-group mb-3">
-                        <label for="iconSelector">Time </label>
+                        <label for="iconSelector" class="mb-2">Time </label>
                         <div class="col-md-12">
                             <select id="iconSelector" class="form-select form-control-lg" name="times" required>
                             <option value="">Select Times</option>
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="basicInput"> Return /Bonus </label>
+                    <label for="basicInput" class="mb-2"> Return /Bonus </label>
                     <div class="input-group mb-3">
                         <input type="text" name="interest" class="form-control form-control-lg " placeholder="  Return /Bonus"
                             aria-label="Username" aria-describedby="basic-addon1" required>
@@ -102,11 +102,11 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="return_interest" id="lifetime"
                             autocomplete="off" value="1"  onchange="show3()" checked >
-                        <label class="btn btn-outline-success  " for="lifetime">Lifetime</label>
+                        <label class="btn btn-outline-success-custom  " for="lifetime">Lifetime</label>
 
                         <input type="radio" class="btn-check" name="return_interest" id="timewise"
                             autocomplete="off" value="3"  onchange="show4()" >
-                        <label class="btn btn-outline-danger  "  for="timewise"> Timewise</label>
+                        <label class="btn btn-outline-danger-custom  "  for="timewise"> Timewise</label>
                         </div>
                     </div>
                 </div>
@@ -128,11 +128,11 @@
                         <div class="selectgroup w-100">
                             <input type="radio" class="btn-check " name="capital_back" id="yes"
                             autocomplete="off" value="1" checked="" >
-                        <label class="btn btn-outline-success  " for="yes">Yes</label>
+                        <label class="btn btn-outline-success-custom  " for="yes">Yes</label>
 
                         <input type="radio" class="btn-check" name="capital_back" id="store"
                             autocomplete="off" value="0" >
-                        <label class="btn btn-outline-danger "  for="store"> Store</label>
+                        <label class="btn btn-outline-danger-custom "  for="store"> Store</label>
                         </div>
                     </div>
                 </div>
@@ -165,20 +165,7 @@
         </div>
     </div>
 </section>
-<style>
-    .btn-outline-danger {
 
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-    .btn-outline-success {
-
-    height: 45px;
-    width: 155px;
-    font-size: 16px;
-    }
-  </style>
 @endsection
 @push('js')
 <script type="text/javascript">

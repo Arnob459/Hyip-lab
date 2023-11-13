@@ -10,35 +10,25 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('admin.choose.store') }}" method="post" enctype="multipart/form-data">
+            <form id="socialForm" action="{{ route('admin.choose.store') }}" method="post" enctype="multipart/form-data" onsubmit="store(event)">
                 @csrf
             <div class="row">
 
-                <div class=" col-md-4">
-                    <div class="form-group">
-                        <label for="iconSelector">Icons </label>
-                        <div class="col-sm-10">
-                            <select id="iconSelector" class="form-select " name="icon" required>
-                            <option value="">Select New icon</option>
-                            <option value="fas fa-hand-holding-usd">Hand-holding-usd</option>
-                            <option value="fas fa-coins">Coins</option>
-                            <option value="fas fa-chart-bar">Chart-bar</option>
-                            <option value="fas fa-money-bill">Money-bill</option>
-                            <option value="fas fa-money-check-alt">wallet</option>
-                            <option value="fas fa-ellipsis-v">ellipsis-v</option>
-                            <option value="fas fa-ellipsis-h">ellipsis-h</option>
-                            <option value="fas fa-bars">Bars</option>
-                            <option value="far fa-comment">Comment</option>
-                            <option value="far fa-compass">Compass</option>
-                            <option value="fas fa-dollar-sign">Doller</option>
-                            <option value="fas fa-heart">Heart</option>
-                            <option value="fas fa-walking">Walking</option>
-                            <option value="fas fa-users">Users</option>
-                            <option value="fab fa-twitter">Twitter</option>
-                            <option value="fab fa-linkedin">Linkedin</option>
-                            <option value="fab fa-youtube">Youtube</option>
-                            <option value="fab fa-instagram">Instagram</option>
-                            </select>
+                <div class=" col-md-3">
+                    <div class="form-group justify-content-center ">
+                        <label for="">@lang(' Icon') *</label>
+                        <div class="btn-group d-block   mb-2">
+                            <button type="button" class="btn btn-lg btn-secondary iconpicker-component"><i
+                                    class="fa fa-fw fa-heart"></i></button>
+                            <button type="button" class="icp icp-dd btn btn-lg btn-secondary dropdown-toggle"
+                                    data-selected="fa-car" data-bs-toggle="dropdown">
+                            </button>
+                            <div class="dropdown-menu"></div>
+                            <span class="action-create"></span>
+                        </div>
+                        <input id="inputIcon" type="hidden" name="icon">
+                        <div class="mt-3">
+                            <small>@lang('Info : click on the dropdown icon to select a social link icon.')</small>
                         </div>
                     </div>
                 </div>
@@ -68,3 +58,4 @@
 @endsection
 
 
+@include('admin.layouts.iconpicker')

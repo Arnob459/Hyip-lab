@@ -15,27 +15,27 @@
 
                 <div class="col-md-12 mb-2">
                     <div class="form-group">
-                        <label for="basicInput">Enter Title</label>
+                        <label for="basicInput" class="mb-2">Enter Title</label>
                         <input type="text" name="banner_title" class="form-control form-control-lg" id="basicInput" value="{{ $banner->banner_title }}"  required>
                     </div>
                 </div>
 
                 <div class="col-md-12 mb-2">
                     <div class="form-group">
-                        <label for="basicInput">Enter Sub-Title</label>
+                        <label for="basicInput" class="mb-2">Enter Sub-Title</label>
                         <input type="text" name="banner_subtitle" class="form-control form-control-lg" id="basicInput" value="{{ $banner->banner_sub_title }}"  required>
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="col-lg-6 col-md-3 col-sm-4 mt-sm-2">Upload Background Image  <span class="required-label">*</span></label>
+                    <label class="col-lg-6 mb-2">Upload Background Image  <span class="required-label">*</span></label>
                     <div class="col-lg-12">
                         @if ($banner->bg_image != null )
                         <img class="img-upload-preview" width="auto" height="auto" style="max-height: 300px" id="image-preview"   src="{{asset('assets/images/banner/' .$banner->bg_image)}}" alt="preview">
                         @else
                         <img class="img-upload-preview" width="auto" height="auto" style="max-height: 300px"   src="http://placehold.it/1920x1120" alt="preview">
                         @endif
-                        <div class="input-file input-file-image">
+                        <div class="input-file input-file-image mt-2">
 
                             <input type="file" class="form-control " id="uploadbgImg" name="banner_bg_img" accept="image/*" hidden >
                             <label for="uploadbgImg" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload a Image</label>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="col-lg-4 col-md-3 col-sm-4 mt-sm-2">Upload Image  <span class="required-label">*</span></label>
+                    <label class="col-lg-4 mb-2">Upload Image  <span class="required-label">*</span></label>
                     <div class="col-lg-12">
                         @if ($banner->image != null )
                         <img class="img-upload-preview" width="auto" height="auto" style="max-height: 350px" id="image-preview2"   src="{{asset('assets/images/banner/' .$banner->image)}}" alt="preview">
@@ -54,7 +54,7 @@
                         <img class="img-upload-preview" width="auto" height="auto" style="max-height: 350px"  src="http://placehold.it/950x730" alt="preview">
                         @endif
 
-                        <div class="input-file input-file-image">
+                        <div class="input-file input-file-image mt-2">
 
                             <input type="file" class="form-control " id="uploadImg" name="banner_img" accept="image/*" hidden >
                             <label for="uploadImg" class="btn btn-primary rounded-pill "><i class="fa fa-file-image"></i> Upload a Image</label>
