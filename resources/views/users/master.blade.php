@@ -8,11 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>{{ $gnl->site_name }} | {{ $page_title }}</title>
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('assets/frontend/bootstrap5/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/frontend/bootstrap5/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/odometer.css') }}">
@@ -23,12 +22,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
-    <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-    <!-- Toastr JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/'.$gnl->favicon) }}" type="image/x-icon">
 </head>
@@ -84,7 +80,7 @@
 
                         <li class="nav-item"><a class="nav-link {{ Route::is('user.invest.history') ? 'active' : '' }}" href="{{route('user.invest.history')}}"><i class="fas fa-book"></i>Return Log</a></li>
 
-                        <li class="nav-item"><a class="nav-link " href="deposit.html"><i class="fas fa-coins"></i>Deposit Now</a>
+                        <li class="nav-item"><a class="nav-link " href=""><i class="fas fa-coins"></i>Deposit Now</a>
                         </li>
 
                         <li class="nav-item"><a class="nav-link {{  Route::is('user.deposit.history') ? 'active' : ''  }}" href="{{route('user.deposit.history')}}"><i class="flaticon-exchange"></i>Deposit History</a>
@@ -120,9 +116,93 @@
 
             <div class="dasboard-body">
                 <div class="dashboard-hero">
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="mobile-header d-flex justify-content-between d-lg-none align-items-center">
+                                <div class="author">
+                                    <img src="" alt="dashboard">
+                                </div>
+                                <div class="cross-header-bar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
+                                <ul class="support-area">
+                                    <li>
+                                        <a href="{{ route('user.support') }}"><i class="flaticon-support"></i>Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="Mailto:{{$gnl_extra->contact_email}}"><i class="flaticon-email"></i><span class="__cf_email__" data-cfemail="f49d9a929bb49c8d9d8498959a90da979b99">[email&#160;protected]</span> </a>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-globe"></i>
+                                        <div class="select-area">
+                                            <select class="select-bar" style="display: none;">
+                                                <option value="en">English</option>
+                                                <option value="bn">Bangla</option>
+                                                <option value="sp">Spanish</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
 
+                                    <ul class="dashboard-right-menus">
+                                        <li>
+                                            <a href="#0" class="author nav-link">
+                                                <div class="thumb">
+                                                        @if (auth()->user()->avatar == null)
+                                                        <img  src="{{asset('assets/images/user.png')}}" alt="">
+                                                        @else
+                                                            <img src="{{asset('assets/images/users/'.auth()->user()->avatar)}}" >
+                                                        @endif
+                                                    <span class="checked">
+                                                        <i class="flaticon-checked"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="content">
+                                                    <h6 class="title">{{ auth()->user()->name}}</h6>
+                                                </div>
+                                            </a>
+                                            <div class="notification-area">
+                                                <div class="author-header">
+                                                    <div class="thumb">
+                                                        @if (auth()->user()->avatar == null)
+                                                        <img  src="{{asset('assets/images/user.png')}}" alt="">
+                                                        @else
+                                                            <img src="{{asset('assets/images/users/'.auth()->user()->avatar)}}" >
+                                                        @endif
+                                                    </div>
+                                                    <h6 class="title">{{ auth()->user()->name}}</h6>
+                                                    <span class="__cf_email__">{{ auth()->user()->email }}</span>
+                                                </div>
+                                                <div class="author-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="{{route('user.profile')}}"><i class="far fa-user"></i>Profile</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('user.profile.edit')}}"><i class="fas fa-user-edit"></i>Edit Profile</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('user.change.password')}}"><i class="fas fa-lock"></i>Change Password</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ route('user.logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="header-bottom">
+                        {{-- <div class="header-bottom">
                             <div class="container">
                                 <div class="header-area">
                                     <div class="logo">
@@ -174,18 +254,6 @@
 
                                         <li class="nav-item"><a class="nav-link" href="{{route('user.transactions')}}">Transactions</a></li>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
-                                            <ul class="dropdown-menu last">
-                                                <li><a class="dropdown-item" href="{{route('user.profile')}}">Profile</a></li>
-                                                <li><a class="dropdown-item" href="{{route('user.change.password')}}">Change Password</a></li>
-                                                <li><a class="dropdown-item" href=" /support">Support</a></li>
-                                                <li><a class="dropdown-item" href=" /g2fa">2Fa Security</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('user.logout') }}">Logout</a></li>
-
-                                            </ul>
-                                        </li>
 
                                     </ul>
                                     <div class="header-bar d-lg-none">
@@ -195,7 +263,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         @yield('content')
 
@@ -220,11 +288,13 @@
                         </div>
                     </div>
 
+                    {{-- <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script> --}}
+
                         <script src="{{ asset('assets/frontend/js/jquery-3.3.1.min.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/modernizr-3.6.0.min.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/plugins.js') }}"></script>
-                        {{-- <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script> --}}
-                        <script src="{{ asset('assets/frontend/bootstrap5/js/bootstrap.min.js') }}"></script>
+                        <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+                        {{-- <script src="{{ asset('assets/frontend/bootstrap5/js/bootstrap.min.js') }}"></script> --}}
 
                         <script src="{{ asset('assets/frontend/js/magnific-popup.min.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/jquery-ui.min.js') }}"></script>
@@ -237,6 +307,10 @@
                         <script src="{{ asset('assets/frontend/js/chart.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/circle-progress.js') }}"></script>
                         <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+
+
+                        <!-- Toastr JS -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
                         @stack('js')
 
                         <script>

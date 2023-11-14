@@ -465,7 +465,7 @@
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="myModalLabel1">Edit </h5>
+                                    <h5 class="modal-title" id="myModalLabel1">Add Amount </h5>
                                     <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
                                         aria-label="Close">
                                         <i data-feather="x"></i>
@@ -490,7 +490,7 @@
                                         </button>
                                         <button type="submit" class="btn btn-primary ml-1" >
                                             <i class="bx bx-check d-block d-sm-none"></i>
-                                            <span class="d-none d-sm-block">Update</span>
+                                            <span class="d-none d-sm-block">Add</span>
                                         </button>
                                     </div>
                                 </form>

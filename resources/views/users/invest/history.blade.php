@@ -35,48 +35,66 @@
 </div>
 <div class="container-fluid">
 
-    <div class="table-wrapper ">
-        <table class="transaction-table">
-            <thead>
-                <tr>
-                    <th scope="col">@lang('Plan')</th>
-                    <th scope="col">@lang('Bonus')</th>
-                    <th scope="col">@lang('Period')</th>
-                    <th scope="col">@lang('Received')</th>
-                    <th scope="col">@lang('Status')</th>
-                    <th scope="col" style="width :20%">@lang('Next Payment')</th>
-                    <th scope="col">@lang('Action')</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="operations">
+        <h3 class="main-title">{{ $page_title }}</h3>
+        {{-- <form class="operation-filter">
+            <div class="filter-item">
+                <label for="date">Date from:</label>
+                <input type="date" placeholder="Date from">
+            </div>
+            <div class="filter-item">
+                <label for="date">Date To:</label>
+                <input type="date" placeholder="Date from">
+            </div>
 
-                @foreach($logs as $data)
+            <div class="filter-item">
+                <button type="submit" class="custom-button">Filter</button>
+            </div>
+        </form> --}}
+
+        <div class="table-wrapper ">
+            <table class="transaction-table">
+                <thead>
                     <tr>
-                        <td>{{__($data->plan->plan_name)}}</td>
-                        <td>{{__($gnl->cur_sym)}} {{formatter_money($data->interest)}} / {{__($data->time_name)}} </td>
-                        <td>@if($data->period == '-1') <span class="badge bg-success">@lang('Life-time')</span>  @else {{__($data->period)}} @lang('Times') @endif</td>
-                        <td>  {{__($data->return_rec_time)}} @lang('Times') </td>
-                       <td>  @if($data->status == '1') <span class="badge bg-warning">@lang('Running')</span>  @else <span class="badge bg-success">@lang('Complete')</span> @endif </td>
-                        @if($data->status == 1)
-                        <td scope="row" style="font-weight:bold;"><p id="counter{{$data->id}}" class="demo countdown timess2"> </p></td>
-                        @else
-                            <td>   @lang('Complete') </td>
-
-                        @endif
-                        <td><a href="{{route('user.invest.details', [slug($data->plan->plan_name), $data->id] )}}" title="details"
-                               class="btn btn-info"><i class="fa fa-eye"></i></a></td>
-
+                        <th scope="col">@lang('Plan')</th>
+                        <th scope="col">@lang('Bonus')</th>
+                        <th scope="col">@lang('Period')</th>
+                        <th scope="col">@lang('Received')</th>
+                        <th scope="col">@lang('Status')</th>
+                        <th scope="col" style="width :20%">@lang('Next Payment')</th>
+                        <th scope="col">@lang('Action')</th>
                     </tr>
+                </thead>
+                <tbody>
 
-                    <script>createCountDown('counter<?php echo $data->id ?>', {{\Carbon\Carbon::parse($data->next_time)->diffInSeconds()}});</script>
-                @endforeach
+                    @foreach($logs as $data)
+                        <tr>
+                            <td>{{__($data->plan->plan_name)}}</td>
+                            <td>{{__($gnl->cur_sym)}} {{formatter_money($data->interest)}} / {{__($data->time_name)}} </td>
+                            <td>@if($data->period == '-1') <span class="badge bg-success">@lang('Life-time')</span>  @else {{__($data->period)}} @lang('Times') @endif</td>
+                            <td>  {{__($data->return_rec_time)}} @lang('Times') </td>
+                        <td>  @if($data->status == '1') <span class="badge bg-warning">@lang('Running')</span>  @else <span class="badge bg-success">@lang('Complete')</span> @endif </td>
+                            @if($data->status == 1)
+                            <td scope="row" style="font-weight:bold;"><p id="counter{{$data->id}}" class="demo countdown timess2"> </p></td>
+                            @else
+                                <td>   @lang('Complete') </td>
 
-            </tbody>
-        </table>
+                            @endif
+                            <td><a href="{{route('user.invest.details', [slug($data->plan->plan_name), $data->id] )}}" title="details"
+                                class="btn btn-info"><i class="fa fa-eye"></i></a></td>
 
-        <ul class="pagination-overfollow ">
-            <p>{{ $logs->links( "pagination::bootstrap-5")}}</p>
-        </ul>
+                        </tr>
+
+                        <script>createCountDown('counter<?php echo $data->id ?>', {{\Carbon\Carbon::parse($data->next_time)->diffInSeconds()}});</script>
+                    @endforeach
+
+                </tbody>
+            </table>
+
+            <ul class="pagination-overfollow ">
+                <p>{{ $logs->links( "pagination::bootstrap-5")}}</p>
+            </ul>
+        </div>
     </div>
 </div>
 

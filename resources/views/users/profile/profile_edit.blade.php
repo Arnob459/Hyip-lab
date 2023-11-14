@@ -18,7 +18,7 @@
 
     <div class="partners">
         <h3 class="main-title">{{ $page_title }}</h3>
-        <div class="row mb-30-none">
+        <div class="row mb-30-none justify-content-center">
             <div class="col-lg-10 mb-30">
                 <div class="create_wrapper mw-100">
                     <h5 class="subtitle">Personal Info</h5>

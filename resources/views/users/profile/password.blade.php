@@ -17,12 +17,11 @@
 <div class="container-fluid">
 
     <div class="partners">
-        <h3 class="main-title">Settings</h3>
-        <div class="row mb-30-none">
+        <h3 class="main-title">{{ $page_title }}</h3>
+        <div class="row mb-30-none justify-content-center">
 
-            <div class="col-lg-8 mb-30">
+            <div class="col-lg-6 mb-30">
                 <div class="create_wrapper mw-100">
-                    <h5 class="subtitle">{{ $page_title }}</h5>
                     <form class="create_ticket_form row mb-30-none" action="{{route('user.password.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             {{method_field('put')}}

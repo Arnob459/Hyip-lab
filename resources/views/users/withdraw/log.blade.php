@@ -14,55 +14,53 @@
 </div>
 </div>
 <div class="container-fluid">
-
-    <div class="table-wrapper">
-        <table class="transaction-table">
-            <thead>
-                <tr>
-                    <th scope="col">@lang('Transaction ID')</th>
-                    <th scope="col">@lang('Gateway')</th>
-                    <th scope="col">@lang('Amount')</th>
-                    <th scope="col">@lang('Receivable')</th>
-                    <th scope="col">@lang('Status')</th>
-                    <th scope="col">@lang('Action')</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if ($withdraws->count() == 0)
+    <div class="operations">
+            <h3 class="main-title">{{ $page_title }}</h3>
+        <div class="table-wrapper">
+            <table class="transaction-table">
+                <thead>
                     <tr>
-                        <td class="text-center" colspan="6">
-                           @lang('No data found')
-                        </td>
-
+                        <th scope="col">@lang('Transaction ID')</th>
+                        <th scope="col">@lang('Gateway')</th>
+                        <th scope="col">@lang('Amount')</th>
+                        <th scope="col">@lang('Receivable')</th>
+                        <th scope="col">@lang('Status')</th>
+                        <th scope="col">@lang('Action')</th>
                     </tr>
-                @endif
+                </thead>
+                <tbody>
+                    @if ($withdraws->count() == 0)
+                        <tr>
+                            <td class="text-center" colspan="6">
+                            @lang('No data found')
+                            </td>
 
-                @foreach($withdraws as $log)
-                    <tr>
-                        <td class="text-warning">#{{$log->trx}}</td>
-                        <td class="text-info">{{__($log->method->name)}}</td>
-                        <td class="text-danger">{{$gnl->cur_sym}} {{formatter_money($log->amount)}}</td>
-                        <td data-label="@lang('Receivable')"  class="text-success">
-                            <strong>{{formatter_money($log->final_amount)}} {{$log->currency}}</strong>
-                        </td>
-                        <td> @if($log->status == 1)
-                                <span class="badge bg-success">@lang('Complete')</span>
-                            @elseif($log->status == 2)
-                                <span class="badge bg-warning">@lang('Pending')</span>
-                            @elseif($log->status == 3)
-                                <span class="badge bg-danger">@lang('Cancel')</span>
+                        </tr>
+                    @endif
 
-                            @endif</td>
-                        <td><a href="{{route('user.withdraw.details', [$log->trx, $log->id] )}}" title="details"
-                               class="btn btn-info"><i class="fa fa-eye"></i></a></td>
-                    </tr>
-                @endforeach
-                </tbody>
-        </table>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-xl-12 justify-content-center text-center">
-            {{$withdraws->links()}}
+                    @foreach($withdraws as $log)
+                        <tr>
+                            <td class="text-warning">#{{$log->trx}}</td>
+                            <td class="text-info">{{__($log->method->name)}}</td>
+                            <td class="text-danger">{{$gnl->cur_sym}} {{formatter_money($log->amount)}}</td>
+                            <td data-label="@lang('Receivable')"  class="text-success">
+                                <strong>{{formatter_money($log->final_amount)}} {{$log->currency}}</strong>
+                            </td>
+                            <td> @if($log->status == 1)
+                                    <span class="badge bg-success">@lang('Complete')</span>
+                                @elseif($log->status == 2)
+                                    <span class="badge bg-warning">@lang('Pending')</span>
+                                @elseif($log->status == 3)
+                                    <span class="badge bg-danger">@lang('Cancel')</span>
+
+                                @endif</td>
+                            <td><a href="{{route('user.withdraw.details', [$log->trx, $log->id] )}}" title="details"
+                                class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+            </table>
+            {{$withdraws->links( "pagination::bootstrap-5")}}
         </div>
     </div>
 </div>

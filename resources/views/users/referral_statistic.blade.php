@@ -18,9 +18,7 @@
     <div class="container-fluid">
         <div class="partners">
 
-            <div class="d-flex justify-content-center row mb-30-none">
                 <h3 class="main-title">Referral Link</h3>
-
                 <div class="referral-group">
                     <div class="refers">
                         <div class="referral-links">
@@ -41,13 +39,12 @@
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
 
         <div class="partners  ">
-            <div class="d-flex justify-content-center row mb-30-none">
+            <div class=" justify-content-center row ">
 
                 <div class="col-lg-10 mb-30">
 
@@ -71,7 +68,7 @@
 
                                 <ul >
                                     @foreach($user->children as $child)
-                                        <li class="ms-3">
+                                        <li class="m-3">
                                             {{ $child->name }}
                                             @if(count($child->children))
                                                 @include('manageChild',['children' => $child->children])

@@ -32,7 +32,7 @@ class UserPlanController extends Controller
         $plan = Plan::where('id', $id)->where('status', 1)->firstOrFail();
         if ($plan->fixed_amount == 0) {
             if ($request->amount < $plan->minimum_amount || $request->amount > $plan->maximum_amount) {
-                return back()->withErrors('Please Follow the investment Limit');
+                return back()->with('error','Please Follow the investment Limit');
             } else {
                 $amount = $request->amount;
 

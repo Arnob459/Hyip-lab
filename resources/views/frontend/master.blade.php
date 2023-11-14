@@ -10,7 +10,8 @@
 
     <title>{{ $gnl->site_name }} - {{$page_title?? ''}}</title>
 
-    <link rel="stylesheet" href="{{ asset('assets/frontend/bootstrap5/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/frontend/bootstrap5/css/bootstrap.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/odometer.css') }}">
@@ -21,7 +22,6 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
-    <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
@@ -64,8 +64,10 @@
         <script src="{{ asset('assets/frontend/js/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('assets/frontend/js/modernizr-3.6.0.min.js') }}"></script>
         <script src="{{ asset('assets/frontend/js/plugins.js') }}"></script>
-        {{-- <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script> --}}
-        <script src="{{ asset('assets/frontend/bootstrap5/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+        {{-- <script src="{{ asset('assets/frontend/bootstrap5/js/bootstrap.min.js') }}"></script> --}}
+        {{-- <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script> --}}
+
 
         <script src="{{ asset('assets/frontend/js/magnific-popup.min.js') }}"></script>
         <script src="{{ asset('assets/frontend/js/jquery-ui.min.js') }}"></script>
