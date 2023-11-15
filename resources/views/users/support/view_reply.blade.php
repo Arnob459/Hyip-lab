@@ -65,7 +65,7 @@
                                     </div>
                                     @else
                                 <div class="col-xl-12">
-                                    <div class="col-lg-8 float-end">
+                                    <div class="col-lg-8 float-right">
                                         <div class="progress-wrapper mb-30">
                                             <div class="d-flex flex-wrap m-0-15-20-none">
                                                 <div class="circle-item">

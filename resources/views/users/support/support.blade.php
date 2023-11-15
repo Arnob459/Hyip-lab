@@ -16,7 +16,7 @@
 
     <div class="table-wrapper">
         <div class="mt-3">
-            <a href="#add" data-bs-toggle="modal" data-bs-target="#add" class="btn btn-warning float-end mb-30"><i class="fa fa-plus"></i>Open a ticket</a>
+            <a href="#add" data-toggle="modal" data-target="#add" class="btn btn-warning float-end mb-30"><i class="fa fa-plus"></i>Open a ticket</a>
 
         </div>
         <table class="table table-hover" id="table1">
@@ -71,9 +71,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">@lang('Create New Support Ticket')</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                {{-- <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> --}}
             </div>
             <div class="modal-body">
                 <form method="post" action="{{route('user.ticket.store')}}">
@@ -89,7 +89,7 @@
                     </div>
             </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-sm ml-1" data-bs-dismiss="modal">
+                        <button type="button" class="btn btn-danger btn-sm ml-1" data-dismiss="modal">
                             <i class="bx bx-x d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Close</span>
                         </button>
