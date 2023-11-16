@@ -49,11 +49,11 @@
                         </div>
                         <div class="create_form_group col-sm-12">
                             <label for="account_email">Email Address:</label>
-                            <input type="text" id="account_email" value="{{auth()->user()->email}}" readonly>
+                            <input type="text" id="account_email" name="email" value="{{auth()->user()->email}}" required>
                         </div>
                         <div class="create_form_group col-sm-12">
                             <label for="account_mobile">Mobile No:</label>
-                            <input type="text" id="account_mobile" value="{{auth()->user()->phone}}" placeholder="Enter your Mobile No">
+                            <input type="text" id="account_mobile" name="phone" value="{{auth()->user()->phone}}" placeholder="Enter your Mobile No">
                         </div>
                         <div class="create_form_group col-sm-12">
                             <label for="account_address">Address:</label>

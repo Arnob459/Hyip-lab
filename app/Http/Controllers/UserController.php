@@ -34,7 +34,8 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|max:160',
-            // 'last_name' => 'required|max:160',
+            'email' => 'required',
+            'phone' => 'required|max:20',
             'address' => 'nullable|max:160',
             'city' => 'nullable|max:160',
             'state' => 'nullable|max:160',
@@ -57,7 +58,8 @@ class UserController extends Controller
 
         auth()->user()->update([
             'name' => $request->name,
-            // 'last_name' => $request->last_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
             'avatar' => $filename,
             'address' => [
                 'address' => $request->address,

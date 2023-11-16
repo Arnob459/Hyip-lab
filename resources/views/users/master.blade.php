@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/fontawesome-5.15.4/css/all.min.css') }}">
     <!-- Toastr CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/toastr/css/toastr.css') }}"> --}}
+
 
 
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/'.$gnl->favicon) }}" type="image/x-icon">
@@ -74,9 +75,19 @@
                         </a>
                     </div>
                     <ul class="dashboard-menu">
-                        <li class="nav-item"><a class="nav-link {{ Route::is('user.home') ? 'active' : '' }}" href="{{ route('user.home') }}"><i class="flaticon-man"></i>Dashboard</a></li>
 
+
+                        <li class="nav-item"><a class="nav-link {{ Route::is('user.home') ? 'active' : '' }}" href="{{ route('user.home') }}"><i class="flaticon-man"></i>Dashboard</a></li>
                         <li class="nav-item"> <a class="nav-link {{ Route::is('user.plan.index') ? 'active' : '' }}" href="{{ route('user.plan.index') }}" ><i class="flaticon-interest"></i>Investment Plan</a> </li>
+
+                        <li  class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'> <i class="flaticon-exchange"></i> <span > Investment History</span> </a>
+                        <ul class="submenu ">
+                            <li class="nav-item"> <a class="nav-link {{ Route::is('user.invest.history') ? 'active' : '' }}" href="{{route('user.invest.history')}}" ><i class="flaticon-interest"></i>Investment return</a> </li>
+                            <li class="nav-item"> <a class="nav-link {{ Route::is('user.invest.return.history') ? 'active' : '' }}" href="{{ route('user.plan.index') }}" ><i class="flaticon-interest"></i>Investment history</a> </li>
+                        </ul>
+                        </li>
+
 
                         <li class="nav-item"><a class="nav-link {{ Route::is('user.invest.history') ? 'active' : '' }}" href="{{route('user.invest.history')}}"><i class="fas fa-book"></i>Return Log</a></li>
 
@@ -202,68 +213,6 @@
                         </div>
                     </div>
 
-                        {{-- <div class="header-bottom">
-                            <div class="container">
-                                <div class="header-area">
-                                    <div class="logo">
-                                        <a href="index.html">
-                                            <img src="{{ asset('assets/images/logo/'.$gnl->logo) }}" alt="logo">
-                                        </a>
-                                    </div>
-                                    <ul class="menu">
-
-                                        <li class="nav-item"><a class="nav-link" href="{{ route('user.home') }}">Dashboard</a></li>
-
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">Investment</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{ route('user.plan.index') }}">Investment plans</a></li>
-                                                <li><a class="dropdown-item" href="{{route('user.invest.history')}}">Investment return</a></li>
-                                                <li><a class="dropdown-item" href=" {{route('user.invest.return.history')}}">Investment return history</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">Deposit</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href=" /deposit">Deposit now</a></li>
-                                                <li><a class="dropdown-item" href=" {{route('user.deposit.history')}}">Deposit history</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">Withdraw</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{route('user.withdraw')}}">Withdraw now</a></li>
-                                                <li><a class="dropdown-item" href="{{route('user.withdraw.history')}}">Withdraw history</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">Referral</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href=" {{route('user.ref')}}">Referral statistic</a></li>
-                                                <li><a class="dropdown-item" href=" {{route('user.ref_com')}}">Referral commissions</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a class="nav-link" href="{{route('user.transactions')}}">Transactions</a></li>
-
-
-                                    </ul>
-                                    <div class="header-bar d-lg-none">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
 
                         @yield('content')
 
@@ -309,24 +258,96 @@
                         <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 
 
-                        <!-- Toastr JS -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+                        {{-- <script src="{{ asset('assets/admin/toastr/js/toastr.js') }}"></script> --}}
+                        <script src="{{ asset('assets/frontend/bootstrap-notify-master/bootstrap-notify.js') }}"></script>
+                        <script src="{{ asset('assets/frontend/bootstrap-notify-master/bootstrap-notify.min.js') }}}"></script>
+
+
                         @stack('js')
 
-                        <script>
+                        @if (session()->has('success'))
+                            <script>
+                                var content = {};
+
+                                content.message = '{{session('success')}}';
+                                content.title = 'Success!!';
+                                content.icon = 'fa fa-bell';
+
+                                $.notify(content, {
+                                    type: 'success',
+                                    placement: {
+                                        from: 'top',
+                                        align: 'right'
+                                    },
+
+                                    time: 1000,
+                                    delay: 4000,
+                                });
+                            </script>
+                        @endif
+
+                        @if (session()->has('warning'))
+                                <script>
+                                    var content = {};
+
+                                    content.message = '{{session('warning')}}';
+                                    content.title = 'Warning!!';
+                                    content.icon = 'fa fa-bell';
+
+                                    $.notify(content, {
+                                        type: 'warning',
+                                        placement: {
+                                            from: 'top',
+                                            align: 'right'
+                                        },
+
+                                        time: 1000,
+                                        delay: 40000,
+                                    });
+                                </script>
+                        @endif
+
+
+                        @if ($errors->any())
+                            <script>
+                                    @foreach ($errors->all() as $error)
+                                var content = {};
+
+                                content.message = '{{ $error }}';
+                                content.title = 'Error!!';
+                                content.icon = 'fa fa-bell';
+
+                                $.notify(content, {
+                                    type: 'danger',
+                                    placement: {
+                                        from: 'top',
+                                        align: 'right'
+                                    },
+
+                                    time: 500,
+                                    delay: 4000,
+                                });
+                                @endforeach
+
+                            </script>
+                        @endif
+
+                        {{-- <script>
                             @if (Session::has('success'))
                                 toastr.options = {
                                     "progressBar": true,
+                                    // "closeButton": true,
                                 }
                                 toastr.success("{{ Session('success') }}");
                             @endif
                             @if (Session::has('error'))
                                 toastr.options = {
                                     "progressBar": true,
+                                    // "closeButton": true,
                                 }
                                 toastr.error("{{ Session('error') }}");
                             @endif
-                        </script>
+                        </script> --}}
 
                     </body>
 

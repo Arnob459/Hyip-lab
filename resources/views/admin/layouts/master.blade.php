@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/fontawesome-5.15.4/css/all.min.css') }}">
     @stack('css_link')
 
+
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/toastr/css/toastr.css') }}">
 
@@ -128,6 +129,9 @@
 <script src="{{ asset('assets/admin/js/app.js') }}"></script>
 <script src="{{ asset('assets/admin/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/admin/extensions/jquery/jquery.min.js') }}"></script>
+
+
+
 <script src="{{ asset('assets/admin/toastr/js/toastr.js') }}"></script>
 
 
